@@ -1,0 +1,24 @@
+one:
+  id: 1
+  working_hours: MyString
+  closed: MyString
+  location_description: MyText
+  speciality: MyString
+  spoon_dishes: MyText
+  description: MyText
+  wellness_description: MyText
+  equipment_description: MyText
+  extra_description: MyText
+  language: MyString
+two:
+  id: 2
+  working_hours: MyString
+  closed: MyString
+  location_description: MyText
+  speciality: MyString
+  spoon_dishes: MyText
+  description: MyText
+  wellness_description: MyText
+  equipment_description: MyText
+  extra_description: MyText
+  language: MyString

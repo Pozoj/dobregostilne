@@ -1,0 +1,16 @@
+%h1 Listing posts
+
+%table
+  %tr
+    %th Name
+  - @posts.each do |post|
+    %tr
+      %td= h post.name
+        
+      %td= link_to 'Show', object_url(post)
+      %td= link_to 'Edit', edit_object_url(post)
+      %td= link_to 'Destroy', object_url(post), :confirm => 'Are you sure?', :method => :delete
+
+%br/
+
+=link_to 'New post', new_object_url

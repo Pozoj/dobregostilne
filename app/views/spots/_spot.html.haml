@@ -1,0 +1,6 @@
+%li
+  = link_to spot.name, [spot.locality, spot]
+  
+  - admin_section do
+    = link_to 'Uredi', edit_object_url(spot)
+    = link_to 'Odstrani', object_url(spot), :confirm => delete_confirmation(spot), :method => :delete

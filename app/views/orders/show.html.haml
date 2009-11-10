@@ -1,0 +1,40 @@
+%p
+  %strong Company name:
+  =h @order.company_name
+%p
+  %strong Person name:
+  =h @order.person_name
+%p
+  %strong Address:
+  =h @order.address
+%p
+  %strong Post:
+  =h @order.post_id
+%p
+  %strong Vat:
+  =h @order.vat_id
+%p
+  %strong Phone:
+  =h @order.phone
+%p
+  %strong Mobile:
+  =h @order.mobile
+%p
+  %strong Fax:
+  =h @order.fax
+%p
+  %strong Email:
+  =h @order.email
+%p
+  %strong Quantity:
+  =h @order.quantity
+%p
+  %strong Ip address:
+  =h @order.ip_address
+%p
+  %strong Date processed:
+  =h @order.date_processed
+
+= link_to 'Edit', edit_object_url
+|
+= link_to 'Back', collection_url

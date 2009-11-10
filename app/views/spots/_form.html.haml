@@ -1,0 +1,84 @@
+- form_for [@locality, @spot], :html => {:class => 'nice'} do |f|
+  = f.error_messages
+
+  %p.submit
+    = f.submit :Shrani
+    
+  %p
+    = f.label :naziv
+    = f.text_field :name
+  %p
+    = f.label :tip
+    = f.collection_select :type_id, Type.all, :id, :name, :include_blank => true
+  %p
+    = f.label :kategorija
+    = f.text_field :category
+  %p
+    = f.label "Večji kraj"
+    = f.collection_select :large_post_id, Post.all, :id, :name, :include_blank => true
+  %p
+    = f.label "Pošta"
+    = f.collection_select :large_post_id, Post.all, :id, :name, :include_blank => true
+  %p
+    = f.label "Območje"
+    = f.collection_select :locality_id, Locality.all, :id, :name, :include_blank => true
+  %p
+    = f.label :ulica
+    = f.text_field :street
+  %p
+    = f.label "Ulična številka"
+    = f.text_field :street_number
+  %p
+    = f.label "Ulična pripona"
+    = f.text_field :street_number_suffix
+  %p
+    = f.label :telefon
+    = f.text_field :phone
+  %p
+    = f.label :fax
+    = f.text_field :fax
+  %p
+    = f.label :mobilni_telefon
+    = f.text_field :mobile
+  %p
+    = f.label :email
+    = f.text_field :email
+  %p
+    = f.label :spletna_stran
+    = f.text_field :website
+  %p
+    = f.label :tip_kuhinje
+    = f.collection_select :cuisine_id, Cuisine.all, :id, :name, :include_blank => true
+  %p
+    = f.label :ima_vrt
+    = f.check_box :has_garden
+  %p
+    = f.label "Pečejo svoj kruh"
+    = f.check_box :has_homebread
+  %p
+    = f.label "Imajo prenočišča"
+    = f.check_box :has_rooms
+  %p
+    = f.label "Št. 1-posteljnih sob"
+    = f.text_field :number_of_1_rooms
+  %p
+    = f.label "Št. 2-posteljnih sob"
+    = f.text_field :number_of_2_rooms
+  %p
+    = f.label "Št. 3-posteljnih sob"
+    = f.text_field :number_of_3_rooms
+  %p
+    = f.label "Št. 4-posteljnih sob"
+    = f.text_field :number_of_4_rooms
+  %p
+    = f.label "Št. apartmajev"
+    = f.text_field :number_of_appartments
+  %p
+    = f.label "Št. sob prirejenih za invalide"
+    = f.text_field :number_of_disabled_rooms
+  %p
+    = f.label "Št. executive sob"
+    = f.text_field :number_of_executive_rooms
+    
+  %p.submit
+    = f.submit :Shrani

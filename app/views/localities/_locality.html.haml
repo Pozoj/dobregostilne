@@ -1,0 +1,6 @@
+%li
+  = link_to locality.name, locality_spots_path(locality)
+  - admin_section do
+    = link_to 'Show', object_url(locality)
+    = link_to 'Edit', edit_object_url(locality)
+    = link_to 'Destroy', object_url(locality), :confirm => 'Are you sure?', :method => :delete

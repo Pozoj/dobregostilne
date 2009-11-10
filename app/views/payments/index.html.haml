@@ -1,0 +1,16 @@
+%h1 Listing payments
+
+%table
+  %tr
+    %th Name
+  - @payments.each do |payment|
+    %tr
+      %td= h payment.name
+        
+      %td= link_to 'Show', object_url(payment)
+      %td= link_to 'Edit', edit_object_url(payment)
+      %td= link_to 'Destroy', object_url(payment), :confirm => 'Are you sure?', :method => :delete
+
+%br/
+
+=link_to 'New payment', new_object_url

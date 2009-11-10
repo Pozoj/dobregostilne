@@ -1,0 +1,16 @@
+%h1 Listing types
+
+%table
+  %tr
+    %th Name
+  - @types.each do |type|
+    %tr
+      %td= h type.name
+        
+      %td= link_to 'Show', object_url(type)
+      %td= link_to 'Edit', edit_object_url(type)
+      %td= link_to 'Destroy', object_url(type), :confirm => 'Are you sure?', :method => :delete
+
+%br/
+
+=link_to 'New type', new_object_url

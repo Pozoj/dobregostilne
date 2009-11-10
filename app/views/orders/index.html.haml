@@ -1,0 +1,38 @@
+%h1 Listing orders
+
+%table
+  %tr
+    %th Company name
+    %th Person name
+    %th Address
+    %th Post
+    %th Vat
+    %th Phone
+    %th Mobile
+    %th Fax
+    %th Email
+    %th Quantity
+    %th Ip address
+    %th Date processed
+  - @orders.each do |order|
+    %tr
+      %td= h order.company_name
+      %td= h order.person_name
+      %td= h order.address
+      %td= h order.post_id
+      %td= h order.vat_id
+      %td= h order.phone
+      %td= h order.mobile
+      %td= h order.fax
+      %td= h order.email
+      %td= h order.quantity
+      %td= h order.ip_address
+      %td= h order.date_processed
+        
+      %td= link_to 'Show', object_url(order)
+      %td= link_to 'Edit', edit_object_url(order)
+      %td= link_to 'Destroy', object_url(order), :confirm => 'Are you sure?', :method => :delete
+
+%br/
+
+=link_to 'New order', new_object_url
