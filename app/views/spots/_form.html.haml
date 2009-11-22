@@ -18,7 +18,7 @@
     = f.collection_select :large_post_id, Post.all, :id, :name, :include_blank => true
   %p
     = f.label "Pošta"
-    = f.collection_select :large_post_id, Post.all, :id, :name, :include_blank => true
+    = f.collection_select :post_id, Post.all, :id, :name, :include_blank => true
   %p
     = f.label "Območje"
     = f.collection_select :locality_id, Locality.all, :id, :name, :include_blank => true

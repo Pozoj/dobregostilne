@@ -20,7 +20,7 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "thoughtbot-paperclip", :lib => "paperclip", :source => "http://gems.github.com"
-  # config.gem "geokit"
+  config.gem "geokit"
   config.gem "RedCloth"
   config.gem "mislav-will_paginate", :lib => "will_paginate"
   # config.gem "mbleigh-subdomain-fu", :lib => "subdomain-fu", :source => "http://gems.github.com", :version => "0.1"

@@ -12,22 +12,16 @@
   =h @spot.category
 %p
   %strong Large post:
-  =h @spot.large_post_id
+  =h @spot.large_post.name
 %p
   %strong Post:
-  =h @spot.post_id
+  =h @spot.post.name
 %p
   %strong Locality:
-  =h @spot.locality_id
+  =h @spot.locality.name
 %p
-  %strong Street:
-  =h @spot.street
-%p
-  %strong Street number:
-  =h @spot.street_number
-%p
-  %strong Street number suffix:
-  =h @spot.street_number_suffix
+  %strong Naslov:
+  =h @spot.full_address
 %p
   %strong Phone:
   =h @spot.phone
