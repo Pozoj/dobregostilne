@@ -1,0 +1,8 @@
+#head {
+  padding: 20px;
+  background: #3D608C; }
+  #head h1 a {
+    color: #fff;
+    display: block;
+    font: bold 48px/48px Verdana, sans-serif;
+    text-decoration: none; }

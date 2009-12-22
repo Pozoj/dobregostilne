@@ -12,8 +12,4 @@ class ApplicationController < ActionController::Base
   def admin?
     true
   end
-  
-  def supported_languages
-    [:si, :en, :de, :it]
-  end
 end

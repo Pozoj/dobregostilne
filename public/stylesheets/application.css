@@ -1,0 +1,152 @@
+#admin {
+  position: fixed;
+  z-index: 9999;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 20px;
+  background: #000;
+  color: #fff;
+  font: normal 12px/20px Helvetica, sans-serif;
+  padding: 10px; }
+  #admin:hover {
+    background: #222; }
+  #admin a {
+    color: #FFC200; }
+  #admin .user {
+    float: left; }
+  #admin .flash {
+    float: right;
+    color: #ccc;
+    margin-right: 30px; }
+
+.admin {
+  display: table;
+  color: #fff; }
+  table .admin {
+    margin: 0; }
+  .admin a {
+    color: #fff !important;
+    text-decoration: none;
+    background: #ff0000;
+    padding: 2.5px 5px;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0 2.5px 0 2.5px; }
+    .admin a:hover {
+      background: #BB232A; }
+  h2 .admin {
+    display: inline; }
+  #content>.admin {
+    position: absolute;
+    top: 5px;
+    right: 5px; }
+
+#backdoor a {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  background: transparent;
+  width: 20px;
+  height: 20px;
+  text-decoration: none; }
+  #backdoor a:hover {
+    background: #953735; }
+
+#admins-index table thead tr th {
+  color: #ccc;
+  text-align: left;
+  padding: 5px; }
+#admins-index table tbody tr td {
+  border-bottom: 1px dotted #ccc;
+  padding: 1px 5px;
+  vertical-align: middle; }
+  #admins-index table tbody tr td.name {
+    font-weight: bold; }
+  #admins-index table tbody tr td.notes {
+    font-size: 10px;
+    line-height: 12px; }
+  #admins-index table tbody tr td.button, #admins-index table tbody tr td .admin {
+    margin: 0;
+    padding: 0; }
+  #admins-index table tbody tr td a {
+    color: #000;
+    font-weight: bold; }
+
+form.nice {
+  padding: 10px 0; }
+  form.nice label {
+    display: block;
+    font-weight: bold; }
+  form.nice p {
+    margin: 4px 0;
+    padding: 4px 0; }
+  form.nice textarea {
+    width: 99%;
+    height: 200px; }
+    form.nice textarea.gui, .big form.nice textarea {
+      height: 500px; }
+  form.nice p.submit {
+    margin-top: 10px;
+    background: #fff url("../images/submit_bkg.png") repeat-y;
+    padding: 20px; }
+  form.nice input.small {
+    width: 25px; }
+  form.nice ul li {
+    list-style: inside square; }
+
+#head {
+  padding: 20px;
+  background: #3D608C; }
+  #head h1 a {
+    color: #fff;
+    display: block;
+    font: bold 48px/48px Verdana, sans-serif;
+    text-decoration: none; }
+
+#menu ul {
+  background: #5685C2; }
+  #menu ul li {
+    list-style: none; }
+    #menu ul li.clear {
+      clear: both; }
+    #menu ul li a {
+      background: #5685C2;
+      display: block;
+      float: left;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #fff;
+      font: bold 16px/16px "Trebuchet MS", sans-serif; }
+
+#content {
+  position: relative;
+  font-family: Helvetica, sans-serif;
+  clear: both;
+  padding: 20px; }
+  #content ul li {
+    list-style: none;
+    padding: 10px;
+    background: #efefef;
+    margin: 10px; }
+
+#foot {
+  padding: 20px; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #ddd; }
+  body #wrap {
+    margin: 0 auto;
+    background: #fff;
+    width: 960px; }
+    body #wrap>br, body #wrap br.clear {
+      clear: both; }
+    body #wrap .checker {
+      border: 2px solid #953735;
+      background: #efefef;
+      padding: 10px;
+      display: table; }

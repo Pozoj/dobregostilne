@@ -1,0 +1,21 @@
+form.nice {
+  padding: 10px 0; }
+  form.nice label {
+    display: block;
+    font-weight: bold; }
+  form.nice p {
+    margin: 4px 0;
+    padding: 4px 0; }
+  form.nice textarea {
+    width: 99%;
+    height: 200px; }
+    form.nice textarea.gui, .big form.nice textarea {
+      height: 500px; }
+  form.nice p.submit {
+    margin-top: 10px;
+    background: #fff url("../images/submit_bkg.png") repeat-y;
+    padding: 20px; }
+  form.nice input.small {
+    width: 25px; }
+  form.nice ul li {
+    list-style: inside square; }

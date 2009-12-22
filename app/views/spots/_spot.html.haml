@@ -3,4 +3,4 @@
   
   - admin_section do
     = link_to 'Uredi', edit_object_url(spot)
-    = link_to 'Odstrani', object_url(spot), :confirm => delete_confirmation(spot), :method => :delete
+    = link_to 'Odstrani', object_url(spot), :confirm => destroy_confirmation(spot), :method => :delete

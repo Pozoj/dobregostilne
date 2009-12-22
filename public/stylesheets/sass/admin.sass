@@ -1,0 +1,60 @@
+#admin
+  :position fixed
+  :z-index 9999
+  :top 0px
+  :left 0px
+  :width 100%
+  :height 20px
+  :background #000
+  :color #fff
+  :font normal 12px/20px Helvetica, sans-serif
+  :padding 10px
+  &:hover
+    :background #222
+  a
+    :color #FFC200
+  .user
+    :float left
+  .flash
+    :float right
+    :color #ccc
+    :margin-right 30px
+
+.admin
+  :display table
+  :color #fff
+  table &
+    :margin 0
+  a
+    :color #fff !important
+    :text-decoration none
+    :background #ff0000
+    :padding 2.5px 5px
+    :font-size 11px
+    :font-weight bold
+    :margin 0 2.5px 0 2.5px
+    &:hover
+      :background #BB232A
+  h2 &
+    :display inline
+    
+  #content>&
+    :position absolute
+    :top 5px
+    :right 5px
+    
+#backdoor
+  a
+    :position fixed
+    :top 0px
+    :right 0px
+    :background transparent
+    :width 20px
+    :height 20px
+    :text-decoration none
+    &:hover
+      :background #953735
+      
+#admins-index
+  table
+    +nice_table
