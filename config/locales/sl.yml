@@ -12,3 +12,52 @@ sl:
     authors: Avtorji
   foot:
     copyright: Vse pravice pridržane
+
+
+  spot_infos:
+    edit:
+      title: Uredi lokal
+    new:
+      title: Nov lokal
+
+  images:
+    new:
+      title: Nova slika za lokal
+
+
+
+  working_hours: Delovni čas
+  closed: Zaprto
+  location_description: Opis lokacije
+  speciality: Specialitete
+  spoon_dishes: Jedi na žlico
+  description: Opis
+  wellness_description: Wellness
+  equipment_description: Opremljenost
+  extra_description: Podrobnosti
+
+  spot_type: Tip
+  spot_category: Kategorija
+  spot_large_post: Večji kraj
+  spot_post: Kraj
+  spot_locality: Območje
+  spot_address: Naslov
+  spot_phone: Telefon
+  spot_fax: Faks
+  spot_mobile: Mobitel
+  spot_email: Email
+  spot_website: Spletna stran
+  spot_cuisine: Tip kuhinje
+  spot_garden: Ima zunanji vrt
+  spot_homebread: Pečejo domači kruh
+  spot_number_of_1_rooms: Enoposteljne sobe
+  spot_number_of_2_rooms: Dvoposteljne sobe
+  spot_number_of_3_rooms: Troposteljne sobe
+  spot_number_of_4_rooms: Štiriposteljne sobe
+  spot_number_of_appartments: Apartmaji
+  spot_number_of_disabled_rooms: Primernih za invalidne osebe
+  spot_number_of_executive_rooms: Executive sobe
+
+  edit: Uredi
+  save: Shrani
+
