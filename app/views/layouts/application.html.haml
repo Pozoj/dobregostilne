@@ -1,19 +1,23 @@
 !!! strict
 %html
   %head
-    %title Dobre gostilne v Sloveniji
+    %title= t("head.title")
     = stylesheet_link_tag 'application'
   %body
     #wrap
       #head
-        %h1= link_to "Dobre gostilne", root_path
+        %h1= link_to t("head.title"), root_path
+        %ul.languages
+          - I18n.available_locales.each do |l|
+            %li= link_to t("head.language_#{l}"), :locale => l
       #menu
         %ul
-          %li= link_to "Področja", localities_path
-          %li= link_to "Kraji", posts_path
-          %li= link_to "O strani"#, about_path
-          %li= link_to "Avtorji"#, authors_path
+          %li= link_to t("menu.localities"), localities_path
+          %li= link_to t("menu.posts"), posts_path
+          %li= link_to t("menu.about")#, about_path
+          %li= link_to t("menu.authors")#, authors_path
           %li.clear
       #content= yield
       #foot
-        &copy; 2009 Pozoj d.o.o. &mdash; Vse pravice pridržane
+        &copy; 2009 Pozoj d.o.o. &mdash; 
+        = t("foot.copyright")

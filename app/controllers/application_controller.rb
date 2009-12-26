@@ -1,14 +1,20 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
-
 class ApplicationController < ActionController::Base
-  helper :all # include all helpers, all the time
+  helper :all
   helper_method :admin?
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
-
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+  protect_from_forgery
   
+  before_filter :set_locale
+  
+  def set_locale
+     I18n.locale = current_locale || "en"
+  end
+
+  def current_locale
+    if params[:locale]
+      (I18n.available_locales.include? params[:locale].to_sym) ? params[:locale] : nil
+    end
+  end
+
   def admin?
     true
   end

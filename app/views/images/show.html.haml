@@ -1,7 +1,4 @@
-%p
-  %strong Spot:
-  =h @image.spot_id
+= title @image.spot.name
+= image_tag @image.image.url(:medium)
 
-= link_to 'Edit', edit_object_url
-|
-= link_to 'Back', collection_url
+= link_to "Nazaj", spot_path(@image.spot)

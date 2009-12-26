@@ -1,0 +1,14 @@
+sl:
+  head:
+    title: Dobre gostilne
+    language_sl: Slovensko
+    language_en: Angleško
+    language_de: Nemško
+    language_it: Italijansko
+  menu:
+    localities: Področja
+    posts: Kraji
+    about: O strani
+    authors: Avtorji
+  foot:
+    copyright: Vse pravice pridržane

@@ -1,30 +1,35 @@
-%p
-  %label{:for => "spot_info_working_hours"} Working hours:
-  = f.text_field :working_hours
-%p
-  %label{:for => "spot_info_closed"} Closed:
-  = f.text_field :closed
-%p
-  %label{:for => "spot_info_location_description"} Location description:
-  = f.text_area :location_description
-%p
-  %label{:for => "spot_info_speciality"} Speciality:
-  = f.text_field :speciality
-%p
-  %label{:for => "spot_info_spoon_dishes"} Spoon dishes:
-  = f.text_area :spoon_dishes
-%p
-  %label{:for => "spot_info_description"} Description:
-  = f.text_area :description
-%p
-  %label{:for => "spot_info_wellness_description"} Wellness description:
-  = f.text_area :wellness_description
-%p
-  %label{:for => "spot_info_equipment_description"} Equipment description:
-  = f.text_area :equipment_description
-%p
-  %label{:for => "spot_info_extra_description"} Extra description:
-  = f.text_area :extra_description
-%p
-  %label{:for => "spot_info_language"} Language:
-  = f.text_field :language
+%h2= language(@spot_info.language)
+- form_for [@spot_info.spot, @spot_info], :html => {:class => 'nice'} do |f|
+  %p.submit
+    = f.submit :Shrani
+    
+  %p
+    = f.label t(:working_hours)
+    = f.text_field :working_hours
+  %p
+    = f.label t(:closed)
+    = f.text_field :closed
+  %p
+    = f.label t(:location_description)
+    = f.text_area :location_description
+  %p
+    = f.label t(:speciality)
+    = f.text_field :speciality
+  %p
+    = f.label t(:spoon_dishes)
+    = f.text_area :spoon_dishes
+  %p
+    = f.label t(:description)
+    = f.text_area :description
+  %p
+    = f.label t(:wellness_description)
+    = f.text_area :wellness_description
+  %p
+    = f.label t(:equipment_description)
+    = f.text_area :equipment_description
+  %p
+    = f.label t(:extra_description)
+    = f.text_area :extra_description
+  
+  %p.submit
+    = f.submit :Shrani

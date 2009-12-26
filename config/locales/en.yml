@@ -1,5 +1,62 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  head:
+    title: Good inns
+    language_sl: Slovenian
+    language_en: English
+    language_de: German
+    language_it: Italian
+  menu:
+    localities: Localities
+    posts: Places
+    about: About
+    authors: Authors
+  foot:
+    copyright: All rights reserved
+    
+    
+  spot_infos:
+    edit:
+      title: Edit spot information
+      
+  images:
+    new:
+      title: New image for spot
+      
+      
+  
+  working_hours: Working hours
+  closed: Closed
+  location_description: Detailed location
+  speciality: Specialities
+  spoon_dishes: Spoon dishes
+  description: Description
+  wellness_description: Wellness
+  equipment_description: Equipment
+  extra_description: Other information
+  
+  spot_type: Type
+  spot_category: Category
+  spot_large_post: Large city
+  spot_post: Place
+  spot_locality: Locality
+  spot_address: Address
+  spot_phone: Phone
+  spot_fax: Fax
+  spot_mobile: Mobile
+  spot_email: Email
+  spot_website: Website
+  spot_cuisine: Cuisine type
+  spot_garden: Has a garden
+  spot_homebread: Bakes homebread
+  spot_number_of_1_rooms: Single-bed rooms
+  spot_number_of_2_rooms: Double-bed rooms
+  spot_number_of_3_rooms: Triple-bed rooms
+  spot_number_of_4_rooms: Four-bed rooms
+  spot_number_of_appartments: Appartments
+  spot_number_of_disabled_rooms: Equipped for handicapped
+  spot_number_of_executive_rooms: Executive suites
+  
+  edit: Edit
+  save: Save
+  
+  

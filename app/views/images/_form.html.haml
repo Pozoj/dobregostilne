@@ -1,3 +1,7 @@
-%p
-  %label{:for => "image_spot_id"} Spot:
-  = f.text_field :spot_id
+- form_for [@spot, @image], :html => {:multipart => true, :class => 'nice'} do |f|
+  %p
+    = f.label :fotografija
+    = f.file_field :image
+
+  %p.submit
+    = f.submit t(:save)

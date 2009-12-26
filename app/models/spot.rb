@@ -6,7 +6,7 @@ class Spot < ActiveRecord::Base
   belongs_to :large_post, :class_name => "Post"
   has_and_belongs_to_many :payments
   has_many :images
-  has_many :spot_infos
+  has_many :spot_infos, :dependent => :destroy
   
   before_save :geocode, :normalize_uri
   
@@ -31,6 +31,12 @@ class Spot < ActiveRecord::Base
   def geocode!
    geocode
    save(false)
+  end
+  
+  def spot_info_attributes=(si_attrs)
+    si_attrs.each do |attrs|
+      spot_infos.build(attrs)
+    end
   end
   
   protected

@@ -1,76 +1,75 @@
+= title @spot.name
+
 %p
-  %strong Name:
-  =h @spot.name
-%p
-  %strong Type:
+  %strong= t(:spot_type)
   =h @spot.type_id
 %p
-  %strong Name websafe:
-  =h @spot.name_websafe
-%p
-  %strong Category:
+  %strong= t(:spot_category)
   =h @spot.category
 %p
-  %strong Large post:
+  %strong= t(:spot_large_post)
   =h @spot.large_post.name
 %p
-  %strong Post:
+  %strong= t(:spot_post)
   =h @spot.post.name
 %p
-  %strong Locality:
+  %strong= t(:spot_locality)
   =h @spot.locality.name
 %p
-  %strong Naslov:
+  %strong= t(:spot_address)
   =h @spot.full_address
 %p
-  %strong Phone:
+  %strong= t(:spot_phone)
   =h @spot.phone
 %p
-  %strong Fax:
+  %strong= t(:spot_fax)
   =h @spot.fax
 %p
-  %strong Mobile:
+  %strong= t(:spot_mobile)
   =h @spot.mobile
 %p
-  %strong Email:
+  %strong= t(:spot_email)
   =h @spot.email
 %p
-  %strong Website:
+  %strong= t(:spot_website)
   =h @spot.website
 %p
-  %strong Cuisine:
+  %strong= t(:spot_cuisine)
   =h @spot.cuisine_id
 %p
-  %strong Has garden:
+  %strong= t(:spot_garden)
   =h @spot.has_garden
 %p
-  %strong Has homebread:
+  %strong= t(:spot_homebread)
   =h @spot.has_homebread
 %p
-  %strong Has rooms:
-  =h @spot.has_rooms
-%p
-  %strong Number of 1 rooms:
+  %strong= t(:spot_number_of_1_rooms)
   =h @spot.number_of_1_rooms
 %p
-  %strong Number of 2 rooms:
+  %strong= t(:spot_number_of_2_rooms)
   =h @spot.number_of_2_rooms
 %p
-  %strong Number of 3 rooms:
+  %strong= t(:spot_number_of_3_rooms)
   =h @spot.number_of_3_rooms
 %p
-  %strong Number of 4 rooms:
+  %strong= t(:spot_number_of_4_rooms)
   =h @spot.number_of_4_rooms
 %p
-  %strong Number of appartments:
+  %strong= t(:spot_number_of_appartments)
   =h @spot.number_of_appartments
 %p
-  %strong Number of disabled rooms:
+  %strong= t(:spot_number_of_disabled_rooms)
   =h @spot.number_of_disabled_rooms
 %p
-  %strong Number of executive rooms:
+  %strong= t(:spot_number_of_executive_rooms)
   =h @spot.number_of_executive_rooms
 
-= link_to 'Edit', edit_object_url
-|
-= link_to 'Back', collection_url
+.images
+  - admin_section do
+    = link_to "Dodaj fotografijo", new_spot_image_path(@spot)
+  = render :partial => @spot.images
+
+- admin_section do
+  - @spot.spot_infos.each do |si|
+    = link_to language(si.language), edit_spot_info_path(@spot, si)
+  = link_to t(:edit), edit_object_url
