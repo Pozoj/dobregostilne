@@ -1,20 +1,20 @@
-= title @spot.name
+= title @spot
 
 %p
   %strong= t(:spot_type)
-  =h @spot.type_id
+  =h @spot.type
 %p
   %strong= t(:spot_category)
   =h @spot.category
 %p
   %strong= t(:spot_large_post)
-  =h @spot.large_post.name
+  =h @spot.large_post
 %p
   %strong= t(:spot_post)
-  =h @spot.post.name
+  =h @spot.post
 %p
   %strong= t(:spot_locality)
-  =h @spot.locality.name
+  =h @spot.locality
 %p
   %strong= t(:spot_address)
   =h @spot.full_address
@@ -35,7 +35,7 @@
   =h @spot.website
 %p
   %strong= t(:spot_cuisine)
-  =h @spot.cuisine_id
+  =h @spot.cuisine
 %p
   %strong= t(:spot_garden)
   =h @spot.has_garden

@@ -39,6 +39,10 @@ class Spot < ActiveRecord::Base
     end
   end
   
+  def to_s
+    name
+  end
+  
   protected
   
   def normalize_uri

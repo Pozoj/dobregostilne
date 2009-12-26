@@ -1,5 +1,17 @@
 = title @locality.name
 - admin_section do
-  = link_to 'Nova gostilna', new_object_url
+  = link_to 'Nov lokal', new_object_url
+
+- @spots_grouped.each do |post, spots|
+  %h2= post.name
+  %ul= render :partial => spots
   
-%ul= render :partial => @spots
+
+- map = GoogleMap.new
+- @spots.each do |spot|
+  - if spot.geocoded?
+    - map.markers << GoogleMapMarker.new( :map => map, :lat => spot.lat, :lng => spot.lng)
+= map.to_html
+#map= map.div
+
+/ #icon = GoogleMapLetterIcon.new(loc.letter)
