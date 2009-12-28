@@ -1,4 +1,6 @@
 - form_for [@spot, @image], :html => {:multipart => true, :class => 'nice'} do |f|
+  = f.error_messages
+
   %p
     = f.label :fotografija
     = f.file_field :image
