@@ -3,7 +3,8 @@
   = link_to 'Nov lokal', new_object_url
 
 - @spots_grouped.each do |post, spots|
-  %h2= post.name
+  - if post and post.name
+    %h2= post.name
   %ul= render :partial => spots
   
 
