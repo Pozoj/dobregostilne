@@ -12,7 +12,7 @@ namespace :vlad do
     puts "Linking shared stuff to current release..."
     [
       ["#{shared_path}/database.yml", "#{current_release}/config"],
-      ["#{shared_path}/system/assets", "#{current_release}/public/assets"],
+      ["#{shared_path}/assets", "#{current_release}/public/assets"],
       ["#{shared_path}/gmaps.rb", "#{current_release}/config/initializers/gmaps.rb"]
     ].each do |link|
       cmd += "ln -s #{link[0]} #{link[1]}; "
