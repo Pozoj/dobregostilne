@@ -64,6 +64,9 @@
   %strong= t(:spot_number_of_executive_rooms)
   =h @spot.number_of_executive_rooms
 
+.infos
+  = render :partial => @spot.spot_infos.find_by_language(current_locale)
+
 .images
   - admin_section do
     = link_to "Dodaj fotografijo", new_spot_image_path(@spot)
