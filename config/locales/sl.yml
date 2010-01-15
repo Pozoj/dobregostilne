@@ -57,6 +57,7 @@ sl:
   spot_number_of_appartments: Apartmaji
   spot_number_of_disabled_rooms: Primernih za invalidne osebe
   spot_number_of_executive_rooms: Executive sobe
+  payment_methods: Plačilne metode
 
   edit: Uredi
   save: Shrani

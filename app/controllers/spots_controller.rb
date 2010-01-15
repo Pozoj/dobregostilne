@@ -10,4 +10,8 @@ class SpotsController < ResourceController::Base
       @spot.spot_infos.build(:language => l.to_s)
     end  
   end
+  
+  update.before do
+    params[:spot][:payment_ids] ||= []
+  end
 end

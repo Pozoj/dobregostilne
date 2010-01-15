@@ -8,6 +8,8 @@ class Spot < ActiveRecord::Base
   has_many :images
   has_many :spot_infos, :dependent => :destroy
   
+  accepts_nested_attributes_for :payments
+  
   before_save :geocode, :normalize_uri
   
   def full_address

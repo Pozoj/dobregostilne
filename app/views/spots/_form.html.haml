@@ -78,7 +78,14 @@
     = f.text_field :number_of_disabled_rooms
   %p
     = f.label "Št. executive sob"
-    = f.text_field :number_of_executive_rooms     
+    = f.text_field :number_of_executive_rooms
     
+  %h2 Plačilne opcije
+  - Payment.all.each do |payment|
+    %p
+      %label
+        = payment
+        = check_box_tag "spot[payment_ids][]", payment.id, @spot.payments.include?(payment)
+  
   %p.submit
     = f.submit t(:save)

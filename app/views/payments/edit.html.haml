@@ -1,11 +1,2 @@
-%h1 Editing payment
-
-= error_messages_for :payment
-
-- form_for(:payment, :url => object_url, :html => { :method => :put }) do |f|
-  = render :partial => "form", :locals => { :f => f }
-  %p= submit_tag "Update"
-  
-= link_to 'Show', object_url
-|
+= title "Urejanje plačila"
 = link_to 'Back', collection_url

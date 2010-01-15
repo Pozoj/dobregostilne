@@ -7,6 +7,7 @@ ActionController::Routing::Routes.draw do |map|
     spot.resources :infos, :controller => :spot_infos
     spot.resources :spot_infos
     spot.resources :images
+    spot.resources :payments
   end
   map.root :controller => :localities
 end

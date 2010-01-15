@@ -63,6 +63,11 @@
 %p
   %strong= t(:spot_number_of_executive_rooms)
   =h @spot.number_of_executive_rooms
+  
+- unless @spot.payments.empty?
+  .payments
+    %h2= t(:payment_methods)
+    %ul= render :partial => "payment", :collection => @spot.payments
 
 .infos
   = render :partial => @spot.spot_infos.find_by_language(current_locale)
@@ -76,3 +81,4 @@
   - @spot.spot_infos.each do |si|
     = link_to language(si.language), edit_spot_info_path(@spot, si)
   = link_to t(:edit), edit_object_url
+      

@@ -1,3 +1,6 @@
-%p
-  %label{:for => "payment_name"} Name:
-  = f.text_field :name
+- form_for @payment, :html => {:class => "nice"} do |f|
+  = f.error_messages
+  
+  %p
+    = f.label :naziv
+    = f.text_field :name
