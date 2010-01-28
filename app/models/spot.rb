@@ -12,6 +12,8 @@ class Spot < ActiveRecord::Base
   
   before_save :geocode, :normalize_uri
   
+  default_scope :order => "name"
+  
   def full_address
     "#{street} #{street_number}#{street_number_suffix}" if (!street.blank? and !street_number.blank?)
   end

@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   helper :all
-  helper_method :admin?, :current_locale
+  helper_method :admin?, :current_locale, :body_attrs
   protect_from_forgery
   
   before_filter :set_locale
@@ -18,6 +18,10 @@ class ApplicationController < ActionController::Base
   end
 
   def admin?
-    true
+    false
+  end
+  
+  def body_attrs
+   { :class => controller_name, :id => "#{controller_name}-#{action_name}" }
   end
 end

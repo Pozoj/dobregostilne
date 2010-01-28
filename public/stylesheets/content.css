@@ -3,11 +3,6 @@
   font-family: Helvetica, sans-serif;
   clear: both;
   padding: 20px; }
-  #content ul li {
-    list-style: none;
-    padding: 10px;
-    background: #efefef;
-    margin: 10px; }
   #content #map {
     clear: both;
     margin-top: 20px;

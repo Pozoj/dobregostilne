@@ -1,8 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :orders, :payments, :types, :cuisines, :posts
-  map.resources :localities do |locality|
-    locality.resources :spots
-  end
+  map.resources :orders, :payments, :types, :cuisines
+  map.resources :localities, :has_many => :spots
+  map.resources :posts, :has_many => :spots
   map.resources :spots do |spot|
     spot.resources :infos, :controller => :spot_infos
     spot.resources :spot_infos

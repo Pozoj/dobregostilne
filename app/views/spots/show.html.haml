@@ -1,38 +1,40 @@
 = title @spot
 
+.contact
+  %p.address
+    %strong= t(:spot_address)
+    = @spot.full_address
+  %p.phone
+    %strong= t(:spot_phone)
+    = @spot.phone
+  - if @spot.mobile
+    %p.mobile
+      %strong= t(:spot_mobile)
+      = @spot.mobile
+  - if @spot.fax
+    %p.fax
+      %strong= t(:spot_fax)
+      = @spot.fax
+  %p.email
+    %strong= t(:spot_email)
+    =h @spot.email
+  %p.website
+    %strong= t(:spot_website)
+    =h @spot.website
+
+.images
+  - admin_section do
+    = link_to "Dodaj fotografijo", new_spot_image_path(@spot)
+  = render :partial => @spot.images
+
+  
 %p
   %strong= t(:spot_type)
   =h @spot.type
 %p
   %strong= t(:spot_category)
   =h @spot.category
-%p
-  %strong= t(:spot_large_post)
-  =h @spot.large_post
-%p
-  %strong= t(:spot_post)
-  =h @spot.post
-%p
-  %strong= t(:spot_locality)
-  =h @spot.locality
-%p
-  %strong= t(:spot_address)
-  =h @spot.full_address
-%p
-  %strong= t(:spot_phone)
-  =h @spot.phone
-%p
-  %strong= t(:spot_fax)
-  =h @spot.fax
-%p
-  %strong= t(:spot_mobile)
-  =h @spot.mobile
-%p
-  %strong= t(:spot_email)
-  =h @spot.email
-%p
-  %strong= t(:spot_website)
-  =h @spot.website
+
 %p
   %strong= t(:spot_cuisine)
   =h @spot.cuisine
@@ -42,27 +44,37 @@
 %p
   %strong= t(:spot_homebread)
   =h @spot.has_homebread
-%p
-  %strong= t(:spot_number_of_1_rooms)
-  =h @spot.number_of_1_rooms
-%p
-  %strong= t(:spot_number_of_2_rooms)
-  =h @spot.number_of_2_rooms
-%p
-  %strong= t(:spot_number_of_3_rooms)
-  =h @spot.number_of_3_rooms
-%p
-  %strong= t(:spot_number_of_4_rooms)
-  =h @spot.number_of_4_rooms
-%p
-  %strong= t(:spot_number_of_appartments)
-  =h @spot.number_of_appartments
-%p
-  %strong= t(:spot_number_of_disabled_rooms)
-  =h @spot.number_of_disabled_rooms
-%p
-  %strong= t(:spot_number_of_executive_rooms)
-  =h @spot.number_of_executive_rooms
+  
+- if @spot.number_of_1_rooms
+  %p
+    %strong= t(:spot_number_of_1_rooms)
+    =h @spot.number_of_1_rooms
+    
+- if @spot.number_of_2_rooms
+  %p
+    %strong= t(:spot_number_of_2_rooms)
+    = @spot.number_of_2_rooms
+    
+- if @spot.number_of_3_rooms
+  %p
+    %strong= t(:spot_number_of_3_rooms)
+    =h @spot.number_of_3_rooms
+- if @spot.number_of_4_rooms
+  %p
+    %strong= t(:spot_number_of_4_rooms)
+    =h @spot.number_of_4_rooms
+- if @spot.number_of_appartments
+  %p
+    %strong= t(:spot_number_of_appartments)
+    =h @spot.number_of_appartments
+- if @spot.number_of_disabled_rooms
+  %p
+    %strong= t(:spot_number_of_disabled_rooms)
+    =h @spot.number_of_disabled_rooms
+- if @spot.number_of_executive_rooms
+  %p
+    %strong= t(:spot_number_of_executive_rooms)
+    =h @spot.number_of_executive_rooms
   
 - unless @spot.payments.empty?
   .payments
@@ -72,10 +84,7 @@
 .infos
   = render :partial => @spot.spot_infos.find_by_language(current_locale)
 
-.images
-  - admin_section do
-    = link_to "Dodaj fotografijo", new_spot_image_path(@spot)
-  = render :partial => @spot.images
+
 
 - admin_section do
   - @spot.spot_infos.each do |si|

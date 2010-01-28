@@ -3,21 +3,25 @@
   %head
     %title= t("head.title")
     = stylesheet_link_tag 'application'
-  %body
+  %body{body_attrs}
     #wrap
       #head
-        %h1= link_to t("head.title"), root_path
-        %ul.languages
-          - I18n.available_locales.each do |l|
-            %li= link_to t("head.language_#{l}"), :locale => l
-      #menu
-        %ul
-          %li= link_to t("menu.localities"), localities_path
-          %li= link_to t("menu.posts"), posts_path
-          %li= link_to t("menu.about")#, about_path
-          %li= link_to t("menu.authors")#, authors_path
-          %li.clear
-      #content= yield
-      #foot
-        &copy; 2009 Pozoj d.o.o. &mdash; 
-        = t("foot.copyright")
+        #languages
+          .text= t("head.choose_language")
+          - I18n.available_locales.each { |l| puts link_to_language l }
+        %h1= link_to_span t("head.title"), root_path
+        %h2= t("head.subtitle")
+        #menu
+          %ul
+            %li.first= link_to t("menu.localities"), localities_path
+            %li= link_to t("menu.spots"), spots_path
+            %li= link_to t("menu.posts"), posts_path
+            %li= link_to t("menu.about")#, about_path
+            %li.last= link_to t("menu.authors")#, authors_path
+            %li.clear
+      #content
+        = yield
+        %br.clear
+    #foot
+      &copy; 2009 Pozoj d.o.o. &mdash; 
+      = t("foot.copyright")

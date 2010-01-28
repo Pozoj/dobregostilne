@@ -1,0 +1,11 @@
+.localities#localities-index #content ul {
+  margin-top: 20px; }
+  .localities#localities-index #content ul li {
+    width: 32%;
+    float: left; }
+    .localities#localities-index #content ul li>a {
+      display: block;
+      background: #eee;
+      padding: 10px;
+      margin: 0 10px 10px 0;
+      font-size: 16px; }

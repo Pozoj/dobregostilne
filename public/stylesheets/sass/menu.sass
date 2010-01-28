@@ -1,15 +1,24 @@
 #menu
+  :background #333
+
   ul
-    :background #5685C2
+    :margin
+      :left 8px
     li
       :list-style none
       &.clear
         :clear both
       a
-        :background #5685C2
+        :background #333
         :display block
         :float left
-        :padding 10px 20px
+        :padding 20px 40px 10px 12px
         :text-decoration none
         :color #fff
-        :font bold 16px/16px "Trebuchet MS", sans-serif
+        :font bold 15px/15px "Trebuchet MS", sans-serif
+        :border-right 1px solid #fff
+        &:hover
+          :background #BCCEE8
+          :color #000
+      &.last a
+        :border 0

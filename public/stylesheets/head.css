@@ -1,8 +1,55 @@
 #head {
-  padding: 20px;
-  background: #3D608C; }
-  #head h1 a {
+  background: #006493 url(../images/head/symbols.png) no-repeat 680px 180px;
+  position: relative; }
+  #head #languages {
+    height: 50px;
+    padding-left: 20px;
+    background: #5685C2;
+    border-bottom: 2px solid #fff;
+    line-height: 50px;
     color: #fff;
-    display: block;
-    font: bold 48px/48px Verdana, sans-serif;
-    text-decoration: none; }
+    font-size: 12px; }
+    #head #languages .text {
+      float: left; }
+    #head #languages a {
+      display: block;
+      float: left;
+      width: 30px;
+      height: 50px; }
+      #head #languages a.sl {
+        background: url(../images/head/si.png) no-repeat 50% 50%; }
+      #head #languages a.en {
+        background: url(../images/head/gb.png) no-repeat 50% 50%; }
+      #head #languages a.it {
+        background: url(../images/head/it.png) no-repeat 50% 50%; }
+      #head #languages a.de {
+        background: url(../images/head/de.png) no-repeat 50% 50%; }
+      #head #languages a.sl.active {
+        background: url(../images/head/si_active.png) no-repeat 50% 50%; }
+      #head #languages a.en.active {
+        background: url(../images/head/gb_active.png) no-repeat 50% 50%; }
+      #head #languages a.it.active {
+        background: url(../images/head/it_active.png) no-repeat 50% 50%; }
+      #head #languages a.de.active {
+        background: url(../images/head/de_active.png) no-repeat 50% 50%; }
+      #head #languages a span {
+        display: none; }
+  #head h1 {
+    height: 175px;
+    width: 800px; }
+    #head h1 a {
+      height: 175px;
+      width: 800px;
+      position: absolute;
+      display: block;
+      background: url(../images/head/dobregostilne.png) no-repeat 20px 30px; }
+      #head h1 a span {
+        display: none; }
+  #head h2 {
+    width: 40%;
+    color: #B2E5FE;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    margin-top: -80px;
+    padding: 20px; }

@@ -1,9 +1,64 @@
 #head
-  :padding 20px
-  :background #3D608C
-  h1
+  :background #006493 url(../images/head/symbols.png) no-repeat 680px 180px
+  :position relative
+  
+  #languages
+    :height 50px
+    :padding
+      :left 20px
+    :background #5685C2
+    :border
+      :bottom 2px solid #fff
+    :line-height 50px
+    :color #fff
+    :font
+      :size 12px
+    .text
+      :float left
     a
-      :color #fff
       :display block
-      :font bold 48px/48px Verdana, sans-serif
-      :text-decoration none
+      :float left
+      :width 30px
+      :height 50px
+      &.sl
+        :background url(../images/head/si.png) no-repeat 50% 50%
+      &.en                                              
+        :background url(../images/head/gb.png) no-repeat 50% 50%
+      &.it                                              
+        :background url(../images/head/it.png) no-repeat 50% 50%
+      &.de                                              
+        :background url(../images/head/de.png) no-repeat 50% 50%
+      &.sl.active
+        :background url(../images/head/si_active.png) no-repeat 50% 50%
+      &.en.active                                              
+        :background url(../images/head/gb_active.png) no-repeat 50% 50%
+      &.it.active                                       
+        :background url(../images/head/it_active.png) no-repeat 50% 50%
+      &.de.active                                       
+        :background url(../images/head/de_active.png) no-repeat 50% 50%
+
+      
+      span
+        :display none
+
+  h1
+    :height 175px
+    :width 800px
+    a
+      :height 175px
+      :width 800px
+      :position absolute
+      :display block
+      :background url(../images/head/dobregostilne.png) no-repeat 20px 30px
+      span
+        :display none
+  h2
+    :width 40%
+    :color #B2E5FE
+    :font
+      :weight bold
+      :family Georgia, serif
+      :size 16px
+      
+    :margin-top -80px
+    :padding 20px

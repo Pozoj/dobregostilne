@@ -44,6 +44,17 @@ module ApplicationHelper
     content_tag :p, link_to("Nazaj", (id) ? object_path(id) : collection_path), :class => 'backlink'
   end
   
+  def link_to_span(text, url)
+    link_to content_tag(:span, text), url
+  end
+  
+  def link_to_language(l)
+    l = l.to_s
+    klass = l
+    klass += " active" if l == current_locale
+    link_to content_tag(:span, t("head.language_#{l}")), {:locale => l}, :class => klass, :title => t("head.language_#{l}")
+  end
+  
   def title(string, header = true)
     content_for(:title) { string }
     if header

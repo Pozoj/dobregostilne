@@ -1,3 +1,22 @@
+#content {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px; }
+  #content li {
+    list-style: none; }
+  #content a {
+    text-decoration: none;
+    color: #21354D; }
+  #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
+    font-family: Tahoma, sans-serif; }
+  #content h1 {
+    font-size: 24px; }
+  #content h2 {
+    font-size: 20px; }
+  #content h3 {
+    font-size: 16px; }
+  #content h4 {
+    font-size: 14px; }
+
 #admin {
   position: fixed;
   z-index: 9999;
@@ -96,39 +115,89 @@ form.nice {
     list-style: inside square; }
 
 #head {
-  padding: 20px;
-  background: #3D608C; }
-  #head h1 a {
+  background: #006493 url(../images/head/symbols.png) no-repeat 680px 180px;
+  position: relative; }
+  #head #languages {
+    height: 50px;
+    padding-left: 20px;
+    background: #5685C2;
+    border-bottom: 2px solid #fff;
+    line-height: 50px;
     color: #fff;
-    display: block;
-    font: bold 48px/48px Verdana, sans-serif;
-    text-decoration: none; }
-
-#menu ul {
-  background: #5685C2; }
-  #menu ul li {
-    list-style: none; }
-    #menu ul li.clear {
-      clear: both; }
-    #menu ul li a {
-      background: #5685C2;
+    font-size: 12px; }
+    #head #languages .text {
+      float: left; }
+    #head #languages a {
       display: block;
       float: left;
-      padding: 10px 20px;
-      text-decoration: none;
-      color: #fff;
-      font: bold 16px/16px "Trebuchet MS", sans-serif; }
+      width: 30px;
+      height: 50px; }
+      #head #languages a.sl {
+        background: url(../images/head/si.png) no-repeat 50% 50%; }
+      #head #languages a.en {
+        background: url(../images/head/gb.png) no-repeat 50% 50%; }
+      #head #languages a.it {
+        background: url(../images/head/it.png) no-repeat 50% 50%; }
+      #head #languages a.de {
+        background: url(../images/head/de.png) no-repeat 50% 50%; }
+      #head #languages a.sl.active {
+        background: url(../images/head/si_active.png) no-repeat 50% 50%; }
+      #head #languages a.en.active {
+        background: url(../images/head/gb_active.png) no-repeat 50% 50%; }
+      #head #languages a.it.active {
+        background: url(../images/head/it_active.png) no-repeat 50% 50%; }
+      #head #languages a.de.active {
+        background: url(../images/head/de_active.png) no-repeat 50% 50%; }
+      #head #languages a span {
+        display: none; }
+  #head h1 {
+    height: 175px;
+    width: 800px; }
+    #head h1 a {
+      height: 175px;
+      width: 800px;
+      position: absolute;
+      display: block;
+      background: url(../images/head/dobregostilne.png) no-repeat 20px 30px; }
+      #head h1 a span {
+        display: none; }
+  #head h2 {
+    width: 40%;
+    color: #B2E5FE;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    margin-top: -80px;
+    padding: 20px; }
+
+#menu {
+  background: #333; }
+  #menu ul {
+    margin-left: 8px; }
+    #menu ul li {
+      list-style: none; }
+      #menu ul li.clear {
+        clear: both; }
+      #menu ul li a {
+        background: #333;
+        display: block;
+        float: left;
+        padding: 20px 40px 10px 12px;
+        text-decoration: none;
+        color: #fff;
+        font: bold 15px/15px "Trebuchet MS", sans-serif;
+        border-right: 1px solid #fff; }
+        #menu ul li a:hover {
+          background: #BCCEE8;
+          color: #000; }
+      #menu ul li.last a {
+        border: 0; }
 
 #content {
   position: relative;
   font-family: Helvetica, sans-serif;
   clear: both;
   padding: 20px; }
-  #content ul li {
-    list-style: none;
-    padding: 10px;
-    background: #efefef;
-    margin: 10px; }
   #content #map {
     clear: both;
     margin-top: 20px;
@@ -136,18 +205,52 @@ form.nice {
     height: 300px; }
 
 #foot {
-  padding: 20px; }
+  margin: 0 auto;
+  padding: 20px;
+  width: 800px;
+  clear: both;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center; }
+
+.localities#localities-index #content ul {
+  margin-top: 20px; }
+  .localities#localities-index #content ul li {
+    width: 32%;
+    float: left; }
+    .localities#localities-index #content ul li>a {
+      display: block;
+      background: #eee;
+      padding: 10px;
+      margin: 0 10px 10px 0;
+      font-size: 16px; }
+
+.spots#spots-index ul.all {
+  margin-top: 20px; }
+  .spots#spots-index ul.all li {
+    float: left;
+    width: 32%;
+    margin: 0 10px 10px 0; }
+.spots#spots-show .contact {
+  float: left;
+  width: 250px;
+  padding: 5px;
+  background: #eee; }
+.spots#spots-show .images {
+  float: right;
+  width: 500px;
+  text-align: right; }
 
 * {
   margin: 0;
   padding: 0; }
 
 body {
-  background: #ddd; }
+  background: #eee; }
   body #wrap {
     margin: 0 auto;
     background: #fff;
-    width: 960px; }
+    width: 800px; }
     body #wrap>br, body #wrap br.clear {
       clear: both; }
     body #wrap .checker {

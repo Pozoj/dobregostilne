@@ -1,0 +1,6 @@
+%li
+  = link_to post, post_spots_path(post)
+  
+  - admin_section do
+    = link_to t(:edit), edit_post_path(post)
+    = link_to t(:destroy), post_path(post), :method => :delete, :confirm => destroy_confirmation(post)

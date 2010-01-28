@@ -1,12 +1,15 @@
 en:
   head:
     title: Good inns
+    subtitle: From a good Inn, to a nice place to spend the night in Slovenia
+    choose_language: "Choose your language:"
     language_sl: Slovenian
     language_en: English
     language_de: German
     language_it: Italian
   menu:
     localities: Localities
+    spots: Inns
     posts: Places
     about: About
     authors: Authors
@@ -59,5 +62,13 @@ en:
   
   edit: Edit
   save: Save
+  destroy: Destroy
   
   
+  localities:
+    index:
+      title: Localities
+      
+  posts:
+    index:
+      title: Places

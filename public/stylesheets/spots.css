@@ -1,0 +1,15 @@
+.spots#spots-index ul.all {
+  margin-top: 20px; }
+  .spots#spots-index ul.all li {
+    float: left;
+    width: 32%;
+    margin: 0 10px 10px 0; }
+.spots#spots-show .contact {
+  float: left;
+  width: 250px;
+  padding: 5px;
+  background: #eee; }
+.spots#spots-show .images {
+  float: right;
+  width: 500px;
+  text-align: right; }

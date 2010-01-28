@@ -1,18 +1,23 @@
-= title @locality.name
-- admin_section do
-  = link_to 'Nov lokal', new_object_url
+- if @locality
+  = title @locality
 
-- @spots_grouped.each do |post, spots|
-  - if post and post.name
-    %h2= post.name
-  %ul= render :partial => spots
+  - @spots_grouped.each do |post, spots|
+    - if post and post.name
+      %h2= post.name
+    %ul.grouped= render spots
+    
+- elsif @post
+  = title @post
+  %ul.all= render @spots
   
-
-- map = GoogleMap.new
-- @spots.each do |spot|
-  - if spot.geocoded?
-    - map.markers << GoogleMapMarker.new( :map => map, :lat => spot.lat, :lng => spot.lng)
-= map.to_html
-#map= map.div
+- else
+  - map = GoogleMap.new
+  - @spots.each do |spot|
+    - if spot.geocoded?
+      - map.markers << GoogleMapMarker.new(:map => map, :lat => spot.lat, :lng => spot.lng)
+  = map.to_html
+  #map= map.div
+  
+  %ul.all= render @spots
 
 / #icon = GoogleMapLetterIcon.new(loc.letter)

@@ -1,2 +1,8 @@
 #foot {
-  padding: 20px; }
+  margin: 0 auto;
+  padding: 20px;
+  width: 800px;
+  clear: both;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center; }
