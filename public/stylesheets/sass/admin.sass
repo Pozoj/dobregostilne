@@ -1,3 +1,28 @@
+= nice_table
+  thead
+    tr th
+      :color #ccc
+      :text-align left
+      :padding 5px
+  tbody tr td
+    :border-bottom 1px dotted #ccc
+    :padding 1px 5px
+    :vertical-align middle
+    &.name
+      :font-weight bold
+    &.notes
+      :font
+        :size 10px
+      :line-height 12px
+      
+    &.button, & .admin
+      :margin 0
+      :padding 0
+      
+    a
+      :color #000
+      :font-weight bold
+      
 #admin
   :position fixed
   :z-index 9999
@@ -54,7 +79,3 @@
     :text-decoration none
     &:hover
       :background #953735
-      
-#admins-index
-  table
-    +nice_table
