@@ -1,4 +1,6 @@
 en:
+  
+  # Layout fields
   head:
     title: Good inns
     subtitle: From a good Inn, to a nice place to spend the night in Slovenia
@@ -13,29 +15,22 @@ en:
     posts: Places
     about: About
     authors: Authors
+    types: Types
+    cuisines: Cuisines
+    payments: Payments
   foot:
     copyright: All rights reserved
     
-    
-  spot_infos:
-    edit:
-      title: Edit spot information
-      
-  images:
-    new:
-      title: New image for spot
-      
-      
-  
-  working_hours: Working hours
-  closed: Closed
-  location_description: Detailed location
-  speciality: Specialities
-  spoon_dishes: Spoon dishes
-  description: Description
-  wellness_description: Wellness
-  equipment_description: Equipment
-  extra_description: Other information
+  # Spot data fields
+  spot_working_hours: Working hours
+  spot_closed: Closed
+  spot_location_description: Detailed location
+  spot_speciality: Specialities
+  spot_spoon_dishes: Spoon dishes
+  spot_description: Description
+  spot_wellness_description: Wellness
+  spot_equipment_description: Equipment
+  spot_extra_description: Other information
   
   spot_type: Type
   spot_category: Category
@@ -51,6 +46,8 @@ en:
   spot_cuisine: Cuisine type
   spot_garden: Has a garden
   spot_homebread: Bakes homebread
+  spot_room_type: Room type
+  spot_room_number: Number
   spot_number_of_1_rooms: Single-bed rooms
   spot_number_of_2_rooms: Double-bed rooms
   spot_number_of_3_rooms: Triple-bed rooms
@@ -60,15 +57,33 @@ en:
   spot_number_of_executive_rooms: Executive suites
   payment_methods: Payment methods
   
+  # Admin common
   edit: Edit
   save: Save
   destroy: Destroy
   
   
+  #
+  #
+  # Controller specific
+  
+  
+  # Localities  
   localities:
     index:
       title: Localities
-      
+
+  # Posts
   posts:
     index:
       title: Places
+  
+  # Spot infos
+  spot_infos:
+    edit:
+      title: Edit spot information
+  
+  # Images
+  images:
+    new:
+      title: New image for spot

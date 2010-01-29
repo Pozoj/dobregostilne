@@ -1,5 +1,11 @@
-- form_for [@spot, @image], :html => {:multipart => true, :class => 'nice'} do |f|
+- @post_to = (@spot) ? [@spot, @image] : @image
+- form_for @post_to, :html => {:multipart => true, :class => 'nice'} do |f|
   = f.error_messages
+  
+  - if @image.image?
+    %p
+      = f.label :existing_photo
+      = image_tag @image.image.url(:small)
 
   %p
     = f.label :fotografija

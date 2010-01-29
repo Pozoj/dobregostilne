@@ -1,5 +1,5 @@
 .image
   = image_tag image.image.url(:medium)
   - admin_section do
-    = link_to "Edit", edit_spot_image_path(image.spot, image)
-    = link_to "Destroy", spot_image_path(image.spot, image), :method => :delete, :confirm => destroy_confirmation(image)
+    = link_to t(:edit), edit_image_path(image)
+    = link_to t(:destroy), image, :method => :delete, :confirm => destroy_confirmation(image)

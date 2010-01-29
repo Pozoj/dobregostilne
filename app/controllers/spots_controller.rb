@@ -1,4 +1,8 @@
 class SpotsController < ResourceController::Base
+  show.before do
+    @spot_info = @spot.spot_infos.find_by_language(current_locale)
+  end
+  
   create.before do
     I18n.available_locales.each do |l|
       @spot.spot_infos.build(:language => l.to_s)

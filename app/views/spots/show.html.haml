@@ -1,5 +1,7 @@
 = title @spot
-
+- if @spot.type
+  %h2= @spot.type
+%h2
 .contact
   %p.address
     %strong= t(:spot_address)
@@ -17,74 +19,72 @@
       = @spot.fax
   %p.email
     %strong= t(:spot_email)
-    =h @spot.email
+    = link_to_self @spot.email, true
   %p.website
     %strong= t(:spot_website)
-    =h @spot.website
+    = link_to_self @spot.website
 
 .images
   - admin_section do
     = link_to "Dodaj fotografijo", new_spot_image_path(@spot)
-  = render :partial => @spot.images
+  .first= render @spot.images.first
+  .other= render @spot.images_other
 
-  
-%p
-  %strong= t(:spot_type)
-  =h @spot.type
-%p
-  %strong= t(:spot_category)
-  =h @spot.category
 
-%p
-  %strong= t(:spot_cuisine)
-  =h @spot.cuisine
-%p
-  %strong= t(:spot_garden)
-  =h @spot.has_garden
-%p
-  %strong= t(:spot_homebread)
-  =h @spot.has_homebread
-  
-- if @spot.number_of_1_rooms
+- if @spot.category > 0
   %p
-    %strong= t(:spot_number_of_1_rooms)
-    =h @spot.number_of_1_rooms
-    
-- if @spot.number_of_2_rooms
+    %strong= t(:spot_category)
+    = format_category @spot.category, @spot.type_id
+- if @spot.cuisine
   %p
-    %strong= t(:spot_number_of_2_rooms)
-    = @spot.number_of_2_rooms
-    
-- if @spot.number_of_3_rooms
-  %p
-    %strong= t(:spot_number_of_3_rooms)
-    =h @spot.number_of_3_rooms
-- if @spot.number_of_4_rooms
-  %p
-    %strong= t(:spot_number_of_4_rooms)
-    =h @spot.number_of_4_rooms
-- if @spot.number_of_appartments
-  %p
-    %strong= t(:spot_number_of_appartments)
-    =h @spot.number_of_appartments
-- if @spot.number_of_disabled_rooms
-  %p
-    %strong= t(:spot_number_of_disabled_rooms)
-    =h @spot.number_of_disabled_rooms
-- if @spot.number_of_executive_rooms
-  %p
-    %strong= t(:spot_number_of_executive_rooms)
-    =h @spot.number_of_executive_rooms
+    %strong= t(:spot_cuisine)
+    =h @spot.cuisine
+- if @spot.has_garden?
+  %p.garden= t(:spot_garden)
+- if @spot.has_homebread?
+  %p.homebread= t(:spot_homebread)
+
+- if @spot.has_rooms?
+  .rooms
+    %table
+      %thead
+        %tr
+          %th= t(:spot_room_type)
+          %th= t(:spot_room_number)
+      %tbody
+        - if @spot.number_of_1_rooms
+          %tr
+            %td= t(:spot_number_of_1_rooms)
+            %td= @spot.number_of_1_rooms    
+        - if @spot.number_of_2_rooms
+          %tr
+            %td= t(:spot_number_of_2_rooms)
+            %td= @spot.number_of_2_rooms
+        - if @spot.number_of_3_rooms
+          %tr
+            %td= t(:spot_number_of_3_rooms)
+            %td= @spot.number_of_3_rooms
+        - if @spot.number_of_4_rooms
+          %tr
+            %td= t(:spot_number_of_4_rooms)
+            %td= @spot.number_of_4_rooms
+        - if @spot.number_of_appartments
+          %tr
+            %td= t(:spot_number_of_appartments)
+            %td= @spot.number_of_appartments
+        - if @spot.number_of_disabled_rooms
+          %tr
+            %td= t(:spot_number_of_disabled_rooms)
+            %td= @spot.number_of_disabled_rooms
+        - if @spot.number_of_executive_rooms
+          %tr
+            %td= t(:spot_number_of_executive_rooms)
+            %td= @spot.number_of_executive_rooms
   
 - unless @spot.payments.empty?
   .payments
-    %h2= t(:payment_methods)
+    %h3= t(:payment_methods)
     %ul= render :partial => "payment", :collection => @spot.payments
-
-.infos
-  = render :partial => @spot.spot_infos.find_by_language(current_locale)
-
-
 
 - admin_section do
   - @spot.spot_infos.each do |si|

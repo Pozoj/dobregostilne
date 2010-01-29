@@ -1,89 +1,54 @@
-/*
-Sass::SyntaxError: Undefined mixin 'nice_table'.
-on line 60 of /Users/mihar/Work/Pozoj d.o.o/dobre-gostilne.si/rails_webroot/public/stylesheets/sass/admin.sass
+#admin {
+  position: fixed;
+  z-index: 9999;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 20px;
+  background: #000;
+  color: #fff;
+  font: normal 12px/20px Helvetica, sans-serif;
+  padding: 10px; }
+  #admin:hover {
+    background: #222; }
+  #admin a {
+    color: #FFC200; }
+  #admin .user {
+    float: left; }
+  #admin .flash {
+    float: right;
+    color: #ccc;
+    margin-right: 30px; }
 
-56:       :background #953735
-57:       
-58: #admins-index
-59:   table
-60:     +nice_table
+.admin {
+  display: table;
+  color: #fff; }
+  table .admin {
+    margin: 0; }
+  .admin a {
+    color: #fff !important;
+    text-decoration: none;
+    background: #ff0000;
+    padding: 2.5px 5px;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 0 2.5px 0 2.5px; }
+    .admin a:hover {
+      background: #BB232A; }
+  h2 .admin {
+    display: inline; }
+  #content>.admin {
+    position: absolute;
+    top: 5px;
+    right: 5px; }
 
-
-Backtrace:
-/Users/mihar/Work/Pozoj d.o.o/dobre-gostilne.si/rails_webroot/public/stylesheets/sass/admin.sass:60
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/mixin_node.rb:27:in `_perform'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:158:in `perform'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `perform_children'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `map'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `perform_children'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:193:in `perform!'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/rule_node.rb:159:in `perform!'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:181:in `_perform'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:158:in `perform'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `perform_children'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `map'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `perform_children'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:193:in `perform!'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/rule_node.rb:159:in `perform!'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:181:in `_perform'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:158:in `perform'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `perform_children'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `map'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:202:in `perform_children'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:193:in `perform!'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:181:in `_perform'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:158:in `perform'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/tree/node.rb:103:in `render'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/plugin.rb:96:in `update_stylesheet'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/plugin.rb:82:in `update_stylesheets'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/plugin.rb:77:in `each'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/plugin.rb:77:in `update_stylesheets'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/plugin.rb:75:in `each'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/plugin.rb:75:in `update_stylesheets'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/plugin.rb:62:in `check_for_updates'
-/Library/Ruby/Gems/1.8/gems/haml-2.2.16/lib/sass/plugin/rails.rb:18:in `process'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
-/Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
-/Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
-/Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
-/Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
-/Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
-/Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
-/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
-/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
-/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
-/Library/Ruby/Gems/1.8/gems/thin-1.2.5/lib/rack/adapter/rails.rb:74:in `call'
-/Library/Ruby/Gems/1.8/gems/thin-1.2.5/lib/thin/connection.rb:76:in `pre_process'
-/Library/Ruby/Gems/1.8/gems/thin-1.2.5/lib/thin/connection.rb:74:in `catch'
-/Library/Ruby/Gems/1.8/gems/thin-1.2.5/lib/thin/connection.rb:74:in `pre_process'
-/Library/Ruby/Gems/1.8/gems/thin-1.2.5/lib/thin/connection.rb:57:in `process'
-/Library/Ruby/Gems/1.8/gems/thin-1.2.5/lib/thin/connection.rb:42:in `receive_data'
-/Library/Ruby/Gems/1.8/gems/eventmachine-0.12.10/lib/eventmachine.rb:256:in `run_machine'
-/Library/Ruby/Gems/1.8/gems/eventmachine-0.12.10/lib/eventmachine.rb:256:in `run'
-/Library/Ruby/Gems/1.8/gems/thin-1.2.5/lib/thin/backends/base.rb:57:in `start'
-/Library/Ruby/Gems/1.8/gems/thin-1.2.5/lib/thin/server.rb:156:in `start'
-/Library/Ruby/Gems/1.8/gems/thin-1.2.5/lib/thin/controllers/controller.rb:80:in `start'
-/Library/Ruby/Gems/1.8/gems/thin-1.2.5/lib/thin/runner.rb:177:in `send'
-/Library/Ruby/Gems/1.8/gems/thin-1.2.5/lib/thin/runner.rb:177:in `run_command'
-/Library/Ruby/Gems/1.8/gems/thin-1.2.5/lib/thin/runner.rb:143:in `run!'
-/Library/Ruby/Gems/1.8/gems/thin-1.2.5/bin/thin:6
-/usr/bin/thin:19:in `load'
-/usr/bin/thin:19
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Sass::SyntaxError: Undefined mixin 'nice_table'.\A on line 60 of /Users/mihar/Work/Pozoj d.o.o/dobre-gostilne.si/rails_webroot/public/stylesheets/sass/admin.sass\A \A 56:       :background #953735\A 57:       \A 58: #admins-index\A 59:   table\A 60:     +nice_table\A "; }
+#backdoor a {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  background: transparent;
+  width: 20px;
+  height: 20px;
+  text-decoration: none; }
+  #backdoor a:hover {
+    background: #953735; }

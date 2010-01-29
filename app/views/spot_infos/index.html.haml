@@ -1,34 +1,36 @@
-%h1 Listing spot_infos
+= title ".title"
 
-%table
-  %tr
-    %th Working hours
-    %th Closed
-    %th Location description
-    %th Speciality
-    %th Spoon dishes
-    %th Description
-    %th Wellness description
-    %th Equipment description
-    %th Extra description
-    %th Language
-  - @spot_infos.each do |spot_info|
+%table.nice
+  %thead
     %tr
-      %td= h spot_info.working_hours
-      %td= h spot_info.closed
-      %td= h spot_info.location_description
-      %td= h spot_info.speciality
-      %td= h spot_info.spoon_dishes
-      %td= h spot_info.description
-      %td= h spot_info.wellness_description
-      %td= h spot_info.equipment_description
-      %td= h spot_info.extra_description
-      %td= h spot_info.language
+      %th= t(:spot_working_hours)
+      %th= t(:closed)
+      %th= t(:location_description)
+      %th= t(:speciality)
+      %th= t(:spoon_dishes)
+      %th= t(:description)
+      %th= t(:wellness_description)
+      %th= t(:equipment_description)
+      %th= t(:extra_description)
+      %th= t(:language)
+  %tbody
+    - @spot_infos.each do |spot_info|
+      %tr
+        %td= h spot_info.working_hours
+        %td= h spot_info.closed
+        %td= h spot_info.location_description
+        %td= h spot_info.speciality
+        %td= h spot_info.spoon_dishes
+        %td= h spot_info.description
+        %td= h spot_info.wellness_description
+        %td= h spot_info.equipment_description
+        %td= h spot_info.extra_description
+        %td= h spot_info.language
         
-      %td= link_to 'Show', object_url(spot_info)
-      %td= link_to 'Edit', edit_object_url(spot_info)
-      %td= link_to 'Destroy', object_url(spot_info), :confirm => 'Are you sure?', :method => :delete
+        %td= link_to 'Show', object_url(spot_info)
+        %td= link_to 'Edit', edit_object_url(spot_info)
+        %td= link_to 'Destroy', object_url(spot_info), :confirm => 'Are you sure?', :method => :delete
 
-%br/
+  %br/
 
-=link_to 'New spot_info', new_object_url
+  =link_to 'New spot_info', new_object_url

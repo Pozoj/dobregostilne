@@ -1,16 +1,17 @@
-%h1 Listing cuisines
+= title t(".title")
 
-%table
-  %tr
-    %th Name
-  - @cuisines.each do |cuisine|
+%table.nice
+  %thead
     %tr
-      %td= h cuisine.name
-        
-      %td= link_to 'Show', object_url(cuisine)
-      %td= link_to 'Edit', edit_object_url(cuisine)
-      %td= link_to 'Destroy', object_url(cuisine), :confirm => 'Are you sure?', :method => :delete
+      %th Name
+  %tbody
+    - @cuisines.each do |cuisine|
+      %tr
+        %td= cuisine        
+        %td
+          - admin_section do
+            = link_to 'Edit', edit_object_url(cuisine)
+            = link_to 'Destroy', object_url(cuisine), :confirm => 'Are you sure?', :method => :delete
 
-%br/
-
-=link_to 'New cuisine', new_object_url
+- admin_section do
+  = link_to 'New cuisine', new_object_url

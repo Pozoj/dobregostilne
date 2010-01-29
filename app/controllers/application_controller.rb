@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def admin?
-    false
+    true
   end
   
   def body_attrs

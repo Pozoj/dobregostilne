@@ -1,16 +1,18 @@
-%h1 Listing images
+= title t(".title")
 
-%table
-  %tr
-    %th Spot
-  - @images.each do |image|
+%table.nice
+  %thead
     %tr
-      %td= h image.spot_id
+      %th Spot
+  %tbody
+    - @images.each do |image|
+      %tr
+        %td= image_tag image.image.url(:small)
         
-      %td= link_to 'Show', object_url(image)
-      %td= link_to 'Edit', edit_object_url(image)
-      %td= link_to 'Destroy', object_url(image), :confirm => 'Are you sure?', :method => :delete
+        %td
+          - admin_section do
+            = link_to t(:edit), edit_object_url(image)
+            = link_to t(:destroy), object_url(image), :confirm => 'Are you sure?', :method => :delete
 
-%br/
-
-=link_to 'New image', new_object_url
+- admin_section do
+  = link_to 'New image', new_object_url

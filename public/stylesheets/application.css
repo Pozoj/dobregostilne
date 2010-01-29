@@ -6,15 +6,24 @@
   #content a {
     text-decoration: none;
     color: #21354D; }
+    #content a:hover {
+      text-decoration: underline; }
   #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
     font-family: Tahoma, sans-serif; }
   #content h1 {
+    margin-bottom: 20px;
     font-size: 24px; }
   #content h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
     font-size: 20px; }
   #content h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
     font-size: 16px; }
   #content h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
     font-size: 14px; }
 
 #admin {
@@ -71,26 +80,6 @@
   text-decoration: none; }
   #backdoor a:hover {
     background: #953735; }
-
-#admins-index table thead tr th {
-  color: #ccc;
-  text-align: left;
-  padding: 5px; }
-#admins-index table tbody tr td {
-  border-bottom: 1px dotted #ccc;
-  padding: 1px 5px;
-  vertical-align: middle; }
-  #admins-index table tbody tr td.name {
-    font-weight: bold; }
-  #admins-index table tbody tr td.notes {
-    font-size: 10px;
-    line-height: 12px; }
-  #admins-index table tbody tr td.button, #admins-index table tbody tr td .admin {
-    margin: 0;
-    padding: 0; }
-  #admins-index table tbody tr td a {
-    color: #000;
-    font-weight: bold; }
 
 form.nice {
   padding: 10px 0; }
@@ -200,7 +189,6 @@ form.nice {
   padding: 20px; }
   #content #map {
     clear: both;
-    margin-top: 20px;
     width: 100%;
     height: 300px; }
 
@@ -231,6 +219,8 @@ form.nice {
     float: left;
     width: 32%;
     margin: 0 10px 10px 0; }
+.spots#spots-index #map {
+  height: 450px; }
 .spots#spots-show .contact {
   float: left;
   width: 250px;
@@ -240,6 +230,8 @@ form.nice {
   float: right;
   width: 500px;
   text-align: right; }
+.spots #map h4 {
+  margin: 0 0 5px 0; }
 
 * {
   margin: 0;

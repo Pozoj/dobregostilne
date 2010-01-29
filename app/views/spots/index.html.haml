@@ -14,7 +14,7 @@
   - map = GoogleMap.new
   - @spots.each do |spot|
     - if spot.geocoded?
-      - map.markers << GoogleMapMarker.new(:map => map, :lat => spot.lat, :lng => spot.lng)
+      - map.markers << GoogleMapMarker.new(:map => map, :lat => spot.lat, :lng => spot.lng, :html => render(:partial => 'info', :locals => {:spot => spot}))
   = map.to_html
   #map= map.div
   

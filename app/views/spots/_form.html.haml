@@ -12,7 +12,7 @@
     = f.collection_select :type_id, Type.all, :id, :name, :include_blank => true
   %p
     = f.label :kategorija
-    = f.text_field :category
+    = f.select :category, [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]
   %p
     = f.label "Večji kraj"
     = f.collection_select :large_post_id, Post.all, :id, :name, :include_blank => true
@@ -21,7 +21,10 @@
     = f.collection_select :post_id, Post.all, :id, :name, :include_blank => true
   %p
     = f.label "Območje"
-    = @locality.name
+    - if @locality
+      = @locality.name
+    - else
+      = f.collection_select :locality_id, Locality.all, :id, :name, :include_blank => true
   %p
     = f.label :ulica
     = f.text_field :street

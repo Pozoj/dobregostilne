@@ -1,1 +1,5 @@
-%li= payment
+%li
+  - if payment.image?
+    = image_tag payment.icon
+  - else
+    = payment

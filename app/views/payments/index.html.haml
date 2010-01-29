@@ -1,4 +1,5 @@
 = title "Plačilne opcije"
 %ul= render :partial => @payments
 
-=link_to 'New payment', new_object_url
+- admin_section do
+  = link_to 'New payment', new_object_url

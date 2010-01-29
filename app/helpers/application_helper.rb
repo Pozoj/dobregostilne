@@ -48,6 +48,12 @@ module ApplicationHelper
     link_to content_tag(:span, text), url
   end
   
+  def link_to_self(url, email=false)
+    url
+    url_with_mail = "mailto:#{url}" if email
+    link_to url, url_with_mail
+  end
+  
   def link_to_language(l)
     l = l.to_s
     klass = l

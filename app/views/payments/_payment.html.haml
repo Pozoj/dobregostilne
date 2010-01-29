@@ -3,4 +3,5 @@
   = payment
   
   - admin_section do
-    = link_to "Odstrani", payment, :method => :delete
+    = link_to t(:edit), edit_payment_path(payment)
+    = link_to t(:destroy), payment, :method => :delete

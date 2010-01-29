@@ -1,3 +1,9 @@
-%p
-  %label{:for => "cuisine_name"} Name:
-  = f.text_field :name
+- form_for @cuisine, :html => {:class => "nice"} do |f|
+  = f.error_messages
+  
+  %p
+    = f.label :name
+    = f.text_field :name
+    
+  %p.submit
+    = f.submit :Shrani

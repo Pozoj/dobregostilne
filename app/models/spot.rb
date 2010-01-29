@@ -43,6 +43,11 @@ class Spot < ActiveRecord::Base
     end
   end
   
+  def images_other
+    return [] if images.size < 2
+    images[1..(images.size)]
+  end
+  
   def to_s
     name
   end
