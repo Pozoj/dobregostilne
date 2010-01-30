@@ -20,10 +20,28 @@
       :padding 5px
       :background #eee
     .images
+      :position relative
       :float right
-      :width 500px
+      :width 320px
+      :height 400px
       :text-align right
-      
+      &>.admin
+        :z-index 999
+        :position absolute
+        :top 2px
+        :right 2px
+      .first
+        :position relative
+        & .admin
+          :position absolute
+          :bottom 2px
+          :right 2px
+      .small_image
+        :position relative
+        & .admin
+          :position absolute
+          :bottom 2px
+          :right 2px
       
   #map
     h4

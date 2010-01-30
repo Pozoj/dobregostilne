@@ -27,8 +27,9 @@
 .images
   - admin_section do
     = link_to "Dodaj fotografijo", new_spot_image_path(@spot)
-  .first= render @spot.images.first
-  .other= render @spot.images_other
+  - unless @spot.images.empty?
+    .first= render @spot.images.first
+    .other= render :partial => "images/small", :collection => @spot.images_other
 
 
 - if @spot.category and (@spot.category > 0)

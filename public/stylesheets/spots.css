@@ -12,8 +12,27 @@
   padding: 5px;
   background: #eee; }
 .spots#spots-show .images {
+  position: relative;
   float: right;
-  width: 500px;
+  width: 320px;
+  height: 400px;
   text-align: right; }
+  .spots#spots-show .images>.admin {
+    z-index: 999;
+    position: absolute;
+    top: 2px;
+    right: 2px; }
+  .spots#spots-show .images .first {
+    position: relative; }
+    .spots#spots-show .images .first .admin {
+      position: absolute;
+      bottom: 2px;
+      right: 2px; }
+  .spots#spots-show .images .small_image {
+    position: relative; }
+    .spots#spots-show .images .small_image .admin {
+      position: absolute;
+      bottom: 2px;
+      right: 2px; }
 .spots #map h4 {
   margin: 0 0 5px 0; }

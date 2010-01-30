@@ -21,3 +21,6 @@
   %ul.all= render @spots
 
 / #icon = GoogleMapLetterIcon.new(loc.letter)
+
+- admin_section do
+  = link_to "New spot", new_locality_spot_path(@locality)

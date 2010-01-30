@@ -10,9 +10,13 @@ class Spot < ActiveRecord::Base
   
   accepts_nested_attributes_for :payments
   
-  before_save :geocode, :normalize_uri
+  before_save :geocode, :normalize_uri, :make_websafe
   
   default_scope :order => "name"
+  
+  def to_param
+    name_websafe
+  end
   
   def full_address
     "#{street} #{street_number}#{street_number_suffix}" if (!street.blank? and !street_number.blank?)
@@ -56,6 +60,10 @@ class Spot < ActiveRecord::Base
   
   def normalize_uri
     self.website = uri_normalize(self.website)
+  end
+    
+  def make_websafe
+    self.name_websafe = name.make_websafe
   end
   
   # Function automatically checks if URI has protocol specified, if not it adds the http.

@@ -1,4 +1,7 @@
 - @post_to = (@spot) ? [@spot, @image] : @image
+- if @spot
+  %h2= @spot
+  
 - form_for @post_to, :html => {:multipart => true, :class => 'nice'} do |f|
   = f.error_messages
   
