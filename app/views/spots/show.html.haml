@@ -1,7 +1,11 @@
 = title @spot
 - if @spot.type
-  %h2= @spot.type
-%h2
+  %h2
+    = @spot.type
+    - if @spot.category and (@spot.category > 0)
+      = format_category @spot.category, @spot.type_id
+      
+  
 .contact
   %p.address
     %strong= t(:spot_address)
@@ -32,10 +36,6 @@
     .other= render :partial => "images/small", :collection => @spot.images_other
 
 
-- if @spot.category and (@spot.category > 0)
-  %p
-    %strong= t(:spot_category)
-    = format_category @spot.category, @spot.type_id
 - if @spot.cuisine
   %p
     %strong= t(:spot_cuisine)

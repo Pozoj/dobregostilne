@@ -1,8 +1,8 @@
 class SpotsController < ResourceController::Base
   before_filter :load_parents
   
-  show.before do
-    @spot_info = @spot.spot_infos.find_by_language(current_locale)
+  show.after do
+    @spot_info = object.spot_infos.find_by_language(current_locale)
   end
   
   create.before do
@@ -25,8 +25,6 @@ class SpotsController < ResourceController::Base
       @locality = Locality.find params[:locality_id]
     end
   end
-  
-  protected
   
   def object
     @spot ||= Spot.find_by_name_websafe params[:id]

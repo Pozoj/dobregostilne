@@ -1,5 +1,4 @@
 .small_image
   = image_tag small.image.url(:square)
   - admin_section do
-    = link_to t(:edit), edit_image_path(small)
     = link_to t(:destroy), small, :method => :delete, :confirm => destroy_confirmation(small)

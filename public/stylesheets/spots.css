@@ -8,7 +8,7 @@
   height: 450px; }
 .spots#spots-show .contact {
   float: left;
-  width: 250px;
+  width: 350px;
   padding: 5px;
   background: #eee; }
 .spots#spots-show .images {
@@ -20,19 +20,29 @@
   .spots#spots-show .images>.admin {
     z-index: 999;
     position: absolute;
+    display: block;
     top: 2px;
-    right: 2px; }
+    right: 1px; }
   .spots#spots-show .images .first {
-    position: relative; }
+    position: relative;
+    float: right;
+    width: 315px;
+    height: 240px;
+    overflow: hidden; }
+    .spots#spots-show .images .first .image {
+      float: right; }
     .spots#spots-show .images .first .admin {
       position: absolute;
-      bottom: 2px;
-      right: 2px; }
+      bottom: 4px;
+      right: 0; }
   .spots#spots-show .images .small_image {
-    position: relative; }
+    position: relative;
+    float: right;
+    margin-top: 5px;
+    margin-left: 5px; }
     .spots#spots-show .images .small_image .admin {
       position: absolute;
-      bottom: 2px;
-      right: 2px; }
+      bottom: 7px;
+      right: 0px; }
 .spots #map h4 {
   margin: 0 0 5px 0; }
