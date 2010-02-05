@@ -30,25 +30,21 @@ namespace :vlad do
     Rake::Task['vlad:update'].invoke
     Rake::Task['vlad:migrate'].invoke
     Rake::Task['vlad:start_app'].invoke
+    Rake::Task['vlad:notify_hoptoad'].invoke
   end
-  
-  desc "Maintenance ON"
-  remote_task :mon do
-    puts "MAINTENANCE !!!"
-    run "cp #{current_release}/public/maintenance_.html #{current_release}/public/maintenance.html"
+
+  task :notify_hoptoad => [:git_user, :git_revision] do
+    notify_command = "rake hoptoad:deploy TO=#{rails_env} REVISION=#{current_sha} REPO=#{repository} USER='#{current_user}'" 
+    puts "Notifying Hoptoad of Deploy (#{notify_command})" 
+    `#{notify_command}`
+    puts "Hoptoad Notification Complete."
   end
-  
-  desc "Maintenance OFF"
-  remote_task :moff do
-    puts "MAINTENANCE OFF ..."
-    run "rm #{current_release}/public/maintenance.html"
+
+  remote_task :git_revision do
+    set :current_sha, run("cd #{File.join(scm_path, 'repo')}; git rev-parse origin/master").strip
   end
-  
-  desc "Cleanup SASS/JS/cache leftovers"
-  remote_task :cleanup_sass do
-    puts "Cleaning up SASS leftovers..."
-    run "rm -f #{current_release}/public/stylesheets/*.css; rm -f #{current_release}/public/javascripts/all.js;"
+
+  task :git_user do
+    set :current_user, `git config --get user.name`.strip
   end
-  
-  remote_task :start_app => :cleanup_sass
 end
