@@ -4,7 +4,7 @@ class SpotsController < ResourceController::Base
   def in_area
     if params[:zoom] and params[:center_x] and params[:center_y]
       logger.info("Spot.on_map [#{params[:center_y].to_f}, #{params[:center_x].to_f}], [760, 450], #{params[:zoom]}")
-      @spots = Spot.on_map [params[:center_y].to_f, params[:center_x].to_f], [760, 450], params[:zoom].to_i
+      @spots = Spot.on_map [params[:center_y].to_f, params[:center_x].to_f], [700, 400], params[:zoom].to_i
     end
     render :layout => false
   end
