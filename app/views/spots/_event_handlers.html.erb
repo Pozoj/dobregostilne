@@ -1,0 +1,5 @@
+GEvent.addListener(google_map, "moveend", function() {
+  new Ajax.Updater('spots_list', '/spots_in_area', {
+    parameters: { zoom: google_map.getZoom(), center_y: google_map.getCenter().y, center_x: google_map.getCenter().x }
+  });
+});

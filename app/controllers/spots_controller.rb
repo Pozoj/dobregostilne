@@ -1,5 +1,13 @@
 class SpotsController < ResourceController::Base
   before_filter :load_parents
+
+  def in_area
+    if params[:zoom] and params[:center_x] and params[:center_y]
+      logger.info("Spot.on_map [#{params[:center_y].to_f}, #{params[:center_x].to_f}], [760, 450], #{params[:zoom]}")
+      @spots = Spot.on_map [params[:center_y].to_f, params[:center_x].to_f], [760, 450], params[:zoom].to_i
+    end
+    render :layout => false
+  end
   
   show.after do
     @spot_info = object.spot_infos.find_by_language(current_locale)

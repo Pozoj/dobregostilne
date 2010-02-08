@@ -7,16 +7,16 @@ class Spot < ActiveRecord::Base
   has_and_belongs_to_many :payments
   has_many :images
   has_many :spot_infos, :dependent => :destroy
-  
   accepts_nested_attributes_for :payments
-  
   before_save :geocode, :normalize_uri, :make_websafe
-  
   default_scope :order => "name"
+  named_scope :geocoded, :conditions => "lng IS NOT NULL AND lat IS NOT NULL"
   
-  def to_param
-    name_websafe
-  end
+  has_a_location
+  
+  # def to_param
+  #   name_websafe
+  # end
   
   def full_address
     "#{street} #{street_number}#{street_number_suffix}" if (!street.blank? and !street_number.blank?)
@@ -59,7 +59,7 @@ class Spot < ActiveRecord::Base
   protected
   
   def normalize_uri
-    self.website = uri_normalize(self.website)
+    self.website = uri_normalize(website)
   end
     
   def make_websafe

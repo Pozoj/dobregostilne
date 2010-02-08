@@ -10,6 +10,9 @@
   %p.address
     %strong= t(:spot_address)
     = @spot.full_address
+    %br
+    = @spot.post_id
+    = @spot.post
   %p.phone
     %strong= t(:spot_phone)
     = @spot.phone

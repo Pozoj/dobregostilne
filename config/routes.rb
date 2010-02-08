@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :orders, :payments, :types, :cuisines
   map.resources :localities, :has_many => :spots, :shallow => true
   map.resources :posts, :has_many => :spots, :shallow => true
+  map.in_area_spots '/spots_in_area', :controller => :spots, :action => :in_area
   map.resources :spots do |spot|
     spot.resources :infos, :controller => :spot_infos
     spot.resources :spot_infos
