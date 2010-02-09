@@ -8,6 +8,9 @@
     = f.label :naziv
     = f.text_field :name
   %p
+    = f.label :poln_naziv
+    = f.text_field :long_name
+  %p
     = f.label :tip
     = f.collection_select :type_id, Type.all, :id, :name, :include_blank => true
   %p

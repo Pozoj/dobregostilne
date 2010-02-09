@@ -2,47 +2,103 @@
   margin-top: 20px; }
   .spots#spots-index ul.all li {
     float: left;
-    width: 32%;
-    margin: 0 10px 10px 0; }
+    width: 232px;
+    height: 50px;
+    background: #efefef;
+    margin: 0 10px 10px 0;
+    padding: 5px; }
+    .spots#spots-index ul.all li h3 {
+      font-size: 12px;
+      width: 170px;
+      float: left;
+      margin-left: 10px; }
+    .spots#spots-index ul.all li img {
+      display: block;
+      float: left; }
 .spots#spots-index #map {
   height: 450px; }
-.spots#spots-show .contact {
-  float: left;
+.spots#spots-show #content h1, .spots#spots-show #content h2 {
+  width: 400px;
+  margin-bottom: 0; }
+.spots#spots-show #content h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: normal;
+  color: #666; }
+.spots#spots-show #content div {
+  margin: 20px 0; }
+  .spots#spots-show #content div p {
+    margin: 3px 0; }
+.spots#spots-show #content .contact {
   width: 350px;
   padding: 5px;
   background: #eee; }
-.spots#spots-show .images {
-  position: relative;
-  float: right;
+.spots#spots-show #content .side {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   width: 320px;
-  height: 400px;
   text-align: right; }
-  .spots#spots-show .images>.admin {
+  .spots#spots-show #content .side div {
+    margin: 0; }
+  .spots#spots-show #content .side .images>.admin {
     z-index: 999;
     position: absolute;
     display: block;
-    top: 2px;
+    top: 5px;
     right: 1px; }
-  .spots#spots-show .images .first {
+  .spots#spots-show #content .side .images .first {
     position: relative;
     float: right;
     width: 315px;
-    height: 240px;
+    max-height: 240px;
     overflow: hidden; }
-    .spots#spots-show .images .first .image {
+    .spots#spots-show #content .side .images .first .image {
       float: right; }
-    .spots#spots-show .images .first .admin {
+    .spots#spots-show #content .side .images .first .admin {
       position: absolute;
       bottom: 4px;
       right: 0; }
-  .spots#spots-show .images .small_image {
+  .spots#spots-show #content .side .images .small_image {
     position: relative;
     float: right;
     margin-top: 5px;
     margin-left: 5px; }
-    .spots#spots-show .images .small_image .admin {
+    .spots#spots-show #content .side .images .small_image .admin {
       position: absolute;
       bottom: 7px;
       right: 0px; }
+.spots#spots-show #content .other_data {
+  width: 60%; }
+.spots#spots-show #content .description, .spots#spots-show #content .wellness, .spots#spots-show #content .extra, .spots#spots-show #content .equipment, .spots#spots-show #content .culinary, .spots#spots-show #content .location {
+  width: 410px; }
+.spots#spots-show #content .payments {
+  clear: both;
+  padding-top: 20px; }
+  .spots#spots-show #content .payments h3 {
+    margin: 10px 0; }
+  .spots#spots-show #content .payments ul li.icon {
+    float: right;
+    padding-left: 10px; }
+  .spots#spots-show #content .payments ul li.noicon {
+    clear: both; }
+.spots#spots-show #content .rooms {
+  padding-top: 20px; }
+  .spots#spots-show #content .rooms table {
+    text-align: left;
+    float: right; }
+    .spots#spots-show #content .rooms table thead tr th {
+      text-align: left;
+      color: #666;
+      padding: 5px;
+      padding-left: 0;
+      border-bottom: 1px solid #999; }
+    .spots#spots-show #content .rooms table tbody tr td {
+      border-bottom: 1px solid #ccc;
+      padding: 5px;
+      padding-left: 0;
+      padding-right: 15px; }
+.spots#spots-show #content .nearby {
+  padding-top: 20px; }
 .spots #map h4 {
   margin: 0 0 5px 0; }

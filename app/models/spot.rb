@@ -4,7 +4,7 @@ class Spot < ActiveRecord::Base
   belongs_to :locality
   belongs_to :cuisine
   belongs_to :large_post, :class_name => "Post"
-  has_and_belongs_to_many :payments
+  has_and_belongs_to_many :payments, :order => 'payments.image DESC'
   has_many :images
   has_many :spot_infos, :dependent => :destroy
   accepts_nested_attributes_for :payments
@@ -14,11 +14,11 @@ class Spot < ActiveRecord::Base
   
   has_a_location
   
-  # def to_param
-  #   name_websafe
-  # end
+  def to_param
+    name_websafe
+  end
   
-  def full_address
+  def address
     "#{street} #{street_number}#{street_number_suffix}" if (!street.blank? and !street_number.blank?)
   end
   
@@ -27,7 +27,7 @@ class Spot < ActiveRecord::Base
   end
 
   def geocode
-   geo = (!street.blank? and !street_number.blank? and post) && Geocoder.geocode(self.full_address, self.post.name, self.post.id)
+   geo = (!street.blank? and !street_number.blank? and post) && Geocoder.geocode(self.address, self.post.name, self.post.id)
 
    if geo
      self.lat, self.lng = geo.lat, geo.lng
@@ -45,6 +45,14 @@ class Spot < ActiveRecord::Base
     si_attrs.each do |attrs|
       spot_infos.build(attrs)
     end
+  end
+  
+  def images?
+    !images.empty?
+  end
+  
+  def image
+    images.first if images?
   end
   
   def images_other

@@ -10,11 +10,14 @@ en:
     language_de: German
     language_it: Italian
   menu:
+    home: Home
     localities: Localities
     spots: Inns
     posts: Places
     about: About
     authors: Authors
+    contact: Contact
+    order: Order book
     types: Types
     cuisines: Cuisines
     payments: Payments
@@ -46,8 +49,8 @@ en:
   spot_cuisine: Cuisine type
   spot_garden: Has a garden
   spot_homebread: Bakes homebread
-  spot_room_type: Room type
-  spot_room_number: Number
+  spot_room_type: Type
+  spot_room_number: No.
   spot_number_of_1_rooms: Single-bed rooms
   spot_number_of_2_rooms: Double-bed rooms
   spot_number_of_3_rooms: Triple-bed rooms
@@ -56,6 +59,15 @@ en:
   spot_number_of_disabled_rooms: Equipped for handicapped
   spot_number_of_executive_rooms: Executive suites
   payment_methods: Payment methods
+  work_time: Work hours
+  closed: Closed
+  culinary_data: Culinary details
+  speciality: Speciality
+  spoon_dishes: Dishes for the spoon
+  wellness: Wellness
+  equipment: Equipment
+  location: Location
+  nearby_spots: Nearby spots
   
   # Admin common
   edit: Edit
@@ -87,3 +99,14 @@ en:
   images:
     new:
       title: New image for spot
+      
+  # Static pages
+  pages:
+    order:
+      title: Order the book
+    about:
+      title: About this site
+    authors:
+      title: Authors
+    contact:
+      title: Contact

@@ -1,5 +1,6 @@
-%li
-  - if payment.image?
+- if payment.image?
+  %li.icon
     = image_tag payment.icon
-  - else
+- else
+  %li.noicon
     = payment

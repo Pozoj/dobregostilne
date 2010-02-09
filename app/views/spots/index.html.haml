@@ -1,25 +1,12 @@
-- if @locality
-  = title @locality
+- @map = GoogleMap::Map.new :custom_js => render("event_handlers")
+- Spot.geocoded.each do |spot|
+  - @map.markers << GoogleMap::Marker.new(:map => @map, :lat => spot.lat, :lng => spot.lng, :html => render(:partial => 'info', :locals => {:spot => spot}))
+= @map.to_html
+#map= @map.div
 
-  - @spots_grouped.each do |post, spots|
-    - if post and post.name
-      %h2= post.name
-    %ul.grouped= render spots
-    
-- elsif @post
-  = title @post
-  %ul.all= render @spots
-  
-- else
-  - @map = GoogleMap::Map.new :custom_js => render("event_handlers")
-  - Spot.geocoded.each do |spot|
-    - @map.markers << GoogleMap::Marker.new(:map => @map, :lat => spot.lat, :lng => spot.lng, :html => render(:partial => 'info', :locals => {:spot => spot}))
-  = @map.to_html
-  #map= @map.div
-  
-  %ul#spots_list.all= render @spots
+%ul#spots_list.all= render @spots
 
 / #icon = GoogleMapLetterIcon.new(loc.letter)
 
 - admin_section do
-  = link_to "New spot", new_locality_spot_path(@locality)
+  = link_to "Nova gostilna", new_object_path

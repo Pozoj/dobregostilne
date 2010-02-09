@@ -14,11 +14,11 @@
         %h2= t("head.subtitle")
         #menu
           %ul
-            %li.first= link_to t("menu.localities"), localities_path
-            %li= link_to t("menu.spots"), spots_path
-            %li= link_to t("menu.posts"), posts_path
-            %li= link_to t("menu.about")#
-            %li.last= link_to t("menu.authors")#, authors_path
+            %li= link_to t("menu.home"), spots_path
+            %li= link_to t("menu.order"), order_path            
+            %li= link_to t("menu.about"), about_path
+            %li= link_to t("menu.contact"), contact_path
+            %li.last= link_to t("menu.authors"), authors_path
             %li.clear
       #content
         = yield
