@@ -83,6 +83,7 @@
   .spots#spots-show #content .payments ul li.noicon {
     clear: both; }
 .spots#spots-show #content .rooms {
+  clear: both;
   padding-top: 20px; }
   .spots#spots-show #content .rooms table {
     text-align: left;

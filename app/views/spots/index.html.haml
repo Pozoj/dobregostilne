@@ -1,6 +1,6 @@
 - @map = GoogleMap::Map.new :custom_js => render("event_handlers")
 - Spot.geocoded.each do |spot|
-  - @map.markers << GoogleMap::Marker.new(:map => @map, :lat => spot.lat, :lng => spot.lng, :html => render(:partial => 'info', :locals => {:spot => spot}))
+  - @map.markers << GoogleMap::Marker.new(:map => @map, :marker_hover_text => spot.name, :lat => spot.lat, :lng => spot.lng, :html => render(:partial => 'info', :locals => {:spot => spot}))
 = @map.to_html
 #map= @map.div
 

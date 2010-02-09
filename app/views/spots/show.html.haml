@@ -2,7 +2,7 @@
 - if @spot.type
   %h2
     = @spot.type
-    - if @spot.category and (@spot.category > 0)
+    - if @spot.category? and (@spot.category > 0)
       = format_category @spot.category, @spot.type_id
   
 .contact
@@ -39,15 +39,16 @@
     %h3= t(:location)
     %p= @spot_info.location_description
 
-.hour_data
-  %h3= t("work_time")
-  - if @spot_info.working_hours?
-    %p.working
-      = @spot_info.working_hours
-  - if @spot_info.closed?
-    %p.working
-      %strong= t(:closed)
-      = @spot_info.closed
+- if @spot_info.working_hours?
+  .hour_data
+    %h3= t("work_time")
+    - if @spot_info.working_hours?
+      %p.working
+        = @spot_info.working_hours
+    - if @spot_info.closed?
+      %p.working
+        %strong= t(:closed)
+        = @spot_info.closed
     
 
 .culinary
@@ -141,9 +142,9 @@
       = @nearby.map {|s| link_to s, s }.join(", ")
 
 - @map = GoogleMap::Map.new :zoom => 15, :center => GoogleMap::Marker.new(:map => GoogleMap::Map.new, :lat => @spot.lat, :lng => @spot.lng)
-- @map.markers << GoogleMap::Marker.new(:map => @map, :lat => @spot.lat, :lng => @spot.lng, :html => render(:partial => 'info', :locals => {:spot => @spot}))
+- @map.markers << GoogleMap::Marker.new(:map => @map, :marker_hover_text => @spot.name, :lat => @spot.lat, :lng => @spot.lng, :html => render(:partial => 'info', :locals => {:spot => @spot}))
 - @nearby.each do |n|
-  - @map.markers << GoogleMap::Marker.new(:map => @map, :lat => n.lat, :lng => n.lng, :html => render(:partial => 'info', :locals => {:spot => n}), :icon => GoogleMap::SmallIcon.new(@map, 'blue'))
+  - @map.markers << GoogleMap::Marker.new(:map => @map, :marker_hover_text => n.name, :lat => n.lat, :lng => n.lng, :html => render(:partial => 'info', :locals => {:spot => n}), :icon => GoogleMap::SmallIcon.new(@map, 'blue'))
 = @map.to_html
 #map= @map.div
 

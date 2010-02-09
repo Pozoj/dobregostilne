@@ -184,7 +184,6 @@ form.nice {
 
 #content {
   position: relative;
-  font-family: Helvetica, sans-serif;
   clear: both;
   padding: 20px; }
   #content #map {
@@ -199,6 +198,7 @@ form.nice {
   clear: both;
   font-size: 12px;
   font-weight: bold;
+  color: #666;
   text-align: center; }
 
 .localities#localities-index #content ul {
@@ -298,6 +298,7 @@ form.nice {
   .spots#spots-show #content .payments ul li.noicon {
     clear: both; }
 .spots#spots-show #content .rooms {
+  clear: both;
   padding-top: 20px; }
   .spots#spots-show #content .rooms table {
     text-align: left;
@@ -328,7 +329,8 @@ form.nice {
   padding: 0; }
 
 body {
-  background: #eee; }
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Tahoma, Arial, sans-serif; }
   body #wrap {
     margin: 0 auto;
     background: #fff;
