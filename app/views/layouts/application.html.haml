@@ -1,7 +1,12 @@
 !!! strict
 %html
   %head
-    %title= t("head.title")
+    %title
+      - if yield(:title)
+        = yield(:title)
+        = "(#{t('head.title')})"
+      - else
+        = t("head.title")
     = stylesheet_link_tag 'application'
     = javascript_include_tag :defaults
   %body{body_attrs}
