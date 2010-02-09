@@ -8,6 +8,7 @@ class SpotsController < ResourceController::Base
   
   show.before do
     @spot_info = object.spot_infos.find_by_language(current_locale)
+    @nearby = @spot.in_radius(10)
   end
   
   create.before do

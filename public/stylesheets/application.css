@@ -285,7 +285,7 @@ form.nice {
       right: 0px; }
 .spots#spots-show #content .other_data {
   width: 60%; }
-.spots#spots-show #content .description, .spots#spots-show #content .wellness, .spots#spots-show #content .extra, .spots#spots-show #content .equipment, .spots#spots-show #content .culinary, .spots#spots-show #content .location {
+.spots#spots-show #content .description, .spots#spots-show #content .wellness, .spots#spots-show #content .extra, .spots#spots-show #content .equipment, .spots#spots-show #content .culinary, .spots#spots-show #content .location, .spots#spots-show #content .hour_data {
   width: 410px; }
 .spots#spots-show #content .payments {
   clear: both;
@@ -314,7 +314,12 @@ form.nice {
       padding-left: 0;
       padding-right: 15px; }
 .spots#spots-show #content .nearby {
+  clear: both;
   padding-top: 20px; }
+.spots#spots-show #map, .spots#spots-show #map div {
+  margin: 0; }
+.spots#spots-show #map {
+  height: 400px; }
 .spots #map h4 {
   margin: 0 0 5px 0; }
 
