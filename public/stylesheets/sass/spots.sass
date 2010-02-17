@@ -1,10 +1,21 @@
 .spots
 
   &#spots-index
-    
+    form
+      :text-align center
+      :margin 20px 0
+      label
+        :font
+          :size 20px
+        :color #666
+      input
+        :height 24px
+        :padding 2px
+        :font
+          :size 20px
+          
     ul
       &.all
-        :margin-top 20px
         li
           :float left
           :width 232px
@@ -22,6 +33,15 @@
           img
             :display block
             :float left
+    
+    #no_results
+      :margin
+        :bottom 25px
+      p
+        :margin 5px 0
+      ul
+        li
+          :list-style square inside
     #map
       :height 450px
     

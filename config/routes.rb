@@ -12,6 +12,9 @@ ActionController::Routing::Routes.draw do |map|
     spot.resources :payments, :shallow => true
   end
   
+  # Search
+  map.search '/search.:format', :controller => :spots, :action => :search
+  
   # Static content
   map.with_options :controller => :pages do |page|
     page.order "/order", :action => :order

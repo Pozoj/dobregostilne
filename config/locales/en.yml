@@ -24,6 +24,8 @@ en:
   foot:
     copyright: All rights reserved
     
+  search: Search
+    
   # Spot data fields
   spot_working_hours: Working hours
   spot_closed: Closed

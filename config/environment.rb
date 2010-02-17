@@ -19,12 +19,11 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-  config.gem "thoughtbot-paperclip", :lib => "paperclip", :source => "http://gems.github.com"
+  config.gem "paperclip"
   config.gem "geokit"
   config.gem "RedCloth"
-  config.gem "mislav-will_paginate", :lib => "will_paginate"
-  # config.gem "mbleigh-subdomain-fu", :lib => "subdomain-fu", :source => "http://gems.github.com", :version => "0.1"
-  config.gem 'giraffesoft-resource_controller', :lib => 'resource_controller', :source => "http://gems.github.com";
+  config.gem "will_paginate"
+  config.gem 'resource_controller'
   config.gem 'hoptoad_notifier'
 
   # Only load the plugins named here, in the order given (default is alphabetical).

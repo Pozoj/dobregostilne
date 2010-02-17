@@ -1,8 +1,21 @@
-- @map = GoogleMap::Map.new :custom_js => render("event_handlers")
+- @map = GoogleMap::Map.new :custom_js => render("event_handlers.js")
 - Spot.geocoded.each do |spot|
   - @map.markers << GoogleMap::Marker.new(:map => @map, :marker_hover_text => spot.name, :lat => spot.lat, :lng => spot.lng, :html => render(:partial => 'info', :locals => {:spot => spot}))
 = @map.to_html
 #map= @map.div
+
+- form_tag search_path do
+  %label Iskanje
+  = text_field_tag :terms, params[:terms]
+  
+#no_results{:style => "display: none;"}
+  %h2 Ni rezultatov
+  %p Vaše iskanje ni obrodilo nobenih rezultatov. Poizkusite znova z drugimi ključnimi besedami.
+  %p Iščete lahko po:
+  %ul
+    %li Imenu gostilne, hotela, lokala
+    %li Naslovu
+    %li Kraju
 
 %ul#spots_list.all= render @spots
 

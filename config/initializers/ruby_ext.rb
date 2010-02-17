@@ -16,4 +16,8 @@ class String
     self.strip.debalkanize.downcase.gsub(' ', '_')
   end
   
+  def self.rand(length=6)
+    Digest::SHA2.hexdigest(ActiveSupport::SecureRandom.base64(8)).slice 0, length
+  end
+  
 end

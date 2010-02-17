@@ -1,41 +1,42 @@
-sl:
+en:
+  
+  # Layout fields
   head:
     title: Dobre gostilne
+    subtitle: Od dobre gostilne do nobel prenočišča
+    choose_language: "Izberite jezik:"
     language_sl: Slovensko
     language_en: Angleško
     language_de: Nemško
     language_it: Italijansko
   menu:
-    localities: Področja
+    home: Domov
+    localities: Območja
+    spots: Gostilne
     posts: Kraji
     about: O strani
     authors: Avtorji
+    contact: Kontakt
+    order: Naroči knjigo
+    types: Tipi
+    cuisines: Kuhinje
+    payments: Plačila
   foot:
     copyright: Vse pravice pridržane
-
-
-  spot_infos:
-    edit:
-      title: Uredi lokal
-    new:
-      title: Nov lokal
-
-  images:
-    new:
-      title: Nova slika za lokal
-
-
-
-  working_hours: Delovni čas
-  closed: Zaprto
-  location_description: Opis lokacije
-  speciality: Specialitete
-  spoon_dishes: Jedi na žlico
-  description: Opis
-  wellness_description: Wellness
-  equipment_description: Opremljenost
-  extra_description: Podrobnosti
-
+    
+  search: Iskanje
+    
+  # Spot data fields
+  spot_working_hours: Delovni čas
+  spot_closed: Zaprto
+  spot_location_description: Podrobna lokacija
+  spot_speciality: Specialitete
+  spot_spoon_dishes: Jedi na žlico
+  spot_description: Opis
+  spot_wellness_description: Wellness
+  spot_equipment_description: Opremljenost
+  spot_extra_description: Ostale informacije
+  
   spot_type: Tip
   spot_category: Kategorija
   spot_large_post: Večji kraj
@@ -44,21 +45,70 @@ sl:
   spot_address: Naslov
   spot_phone: Telefon
   spot_fax: Faks
-  spot_mobile: Mobitel
+  spot_mobile: Mobilnik
   spot_email: Email
-  spot_website: Splet
+  spot_website: Spletna stran
   spot_cuisine: Tip kuhinje
-  spot_garden: Ima zunanji vrt
+  spot_garden: Imajo vrt
   spot_homebread: Pečejo domači kruh
+  spot_room_type: Tip
+  spot_room_number: Št.
   spot_number_of_1_rooms: Enoposteljne sobe
   spot_number_of_2_rooms: Dvoposteljne sobe
   spot_number_of_3_rooms: Troposteljne sobe
   spot_number_of_4_rooms: Štiriposteljne sobe
   spot_number_of_appartments: Apartmaji
-  spot_number_of_disabled_rooms: Primernih za invalidne osebe
+  spot_number_of_disabled_rooms: Opremljeno za invalide
   spot_number_of_executive_rooms: Executive sobe
-  payment_methods: Plačilne metode
-
+  payment_methods: Plačilne opcije
+  work_time: Delovni čas
+  closed: Zaprto
+  culinary_data: Kulinarika
+  speciality: Specialitete
+  spoon_dishes: Jedi na žlico
+  wellness: Wellness
+  equipment: Opremljenost
+  location: Lokacija
+  nearby_spots: Gostilne blizu
+  
+  # Admin common
   edit: Uredi
   save: Shrani
+  destroy: Odstrani
+  
+  
+  #
+  #
+  # Controller specific
+  
+  
+  # Localities  
+  localities:
+    index:
+      title: Območja
 
+  # Posts
+  posts:
+    index:
+      title: Kraji
+  
+  # Spot infos
+  spot_infos:
+    edit:
+      title: Uredi gostilno
+  
+  # Images
+  images:
+    new:
+      title: Nova slika za gostilno
+      
+  # Static pages
+  pages:
+    order:
+      title: Naročite knjigo
+    about:
+      title: O strani
+    authors:
+      title: Avtorji
+    contact:
+      title: Kontakt

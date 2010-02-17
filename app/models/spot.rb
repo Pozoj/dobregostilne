@@ -9,8 +9,14 @@ class Spot < ActiveRecord::Base
   has_many :spot_infos, :dependent => :destroy
   accepts_nested_attributes_for :payments
   before_save :geocode, :normalize_uri, :make_websafe
-  default_scope :order => "name"
-  named_scope :geocoded, :conditions => "lng IS NOT NULL AND lat IS NOT NULL"
+  default_scope :order => "spots.name"
+  named_scope :geocoded, :conditions => "spots.lng IS NOT NULL AND spots.lat IS NOT NULL"
+  named_scope :search, lambda { |terms| 
+    {
+    :include => :post,
+    :conditions => ["(spots.name LIKE ?) OR (spots.long_name LIKE ?) OR (spots.street LIKE ?) OR (posts.name LIKE ?)", "%#{terms}%", "%#{terms}%", "%#{terms}%", "%#{terms}%"]
+    }
+  }
   
   has_a_location
   
@@ -24,6 +30,10 @@ class Spot < ActiveRecord::Base
   
   def geocoded?
    !!(self.lat and self.lng)
+  end
+
+  def to_json
+    "lat: #{lat}, lng: #{lng}"
   end
 
   def geocode
@@ -67,11 +77,11 @@ class Spot < ActiveRecord::Base
   protected
   
   def normalize_uri
-    self.website = uri_normalize(website)
+    self.website = uri_normalize(website) if website
   end
     
   def make_websafe
-    self.name_websafe = name.make_websafe
+    self.name_websafe = name.make_websafe if name
   end
   
   # Function automatically checks if URI has protocol specified, if not it adds the http.

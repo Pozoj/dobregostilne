@@ -1,0 +1,3 @@
+[<%= @spots.map do |spot|
+  "{#{spot.to_json}, html: \"#{escape_javascript escape_javascript(render(:partial => 'info.html.haml', :locals => {:spot => spot}))}\"}"
+end.join(",") -%>]
