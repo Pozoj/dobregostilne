@@ -1,6 +1,6 @@
 set :application, "dobre-gostilne.si"
-set :domain, "staging-staging"
-set :deploy_to, "/webroot/gostilne"
+set :domain, "racker-deploy"
+set :deploy_to, "/webroot/dobregostilne"
 set :repository, 'git@home:gostilne.git'
 set :scm, 'git'
 

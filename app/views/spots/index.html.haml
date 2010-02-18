@@ -4,19 +4,6 @@
 = @map.to_html
 #map= @map.div
 
-- form_tag search_path do
-  %label Iskanje
-  = text_field_tag :terms, params[:terms]
-  
-#no_results{:style => "display: none;"}
-  %h2 Ni rezultatov
-  %p Vaše iskanje ni obrodilo nobenih rezultatov. Poizkusite znova z drugimi ključnimi besedami.
-  %p Iščete lahko po:
-  %ul
-    %li Imenu gostilne, hotela, lokala
-    %li Naslovu
-    %li Kraju
-
 %ul#spots_list.all= render @spots
 
 / #icon = GoogleMapLetterIcon.new(loc.letter)

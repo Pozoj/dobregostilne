@@ -8,7 +8,8 @@
       - else
         = t("head.title")
     = stylesheet_link_tag 'application'
-    = javascript_include_tag :defaults  
+    = javascript_include_tag :defaults
+    = yield :head
   %body{body_attrs}
     #wrap
       #head
@@ -20,9 +21,9 @@
         #menu
           %ul
             %li= link_to t("menu.home"), spots_path
+            %li= link_to t("menu.search"), search_path
             %li= link_to t("menu.order"), order_path            
             %li= link_to t("menu.about"), about_path
-            %li= link_to t("menu.contact"), contact_path
             %li.last= link_to t("menu.authors"), authors_path
             %li.clear
       #content

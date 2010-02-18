@@ -1,4 +1,4 @@
-en:
+sl:
   
   # Layout fields
   head:
@@ -11,13 +11,14 @@ en:
     language_it: Italijansko
   menu:
     home: Domov
+    search: Iskanje
     localities: Območja
     spots: Gostilne
     posts: Kraji
     about: O strani
     authors: Avtorji
     contact: Kontakt
-    order: Naroči knjigo
+    order: Knjiga
     types: Tipi
     cuisines: Kuhinje
     payments: Plačila

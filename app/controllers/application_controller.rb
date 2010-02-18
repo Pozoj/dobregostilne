@@ -4,21 +4,30 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   before_filter :set_locale
-  
+
+  protected
+
   def set_locale
-     I18n.locale = current_locale
+    locale = current_locale
+    I18n.locale = locale.to_s
+    cookies[:locale] = locale unless (cookies[:locale] && cookies[:locale] == locale)
+  end
+  def default_url_options(options={})
+    { :locale => current_locale } 
   end
 
   def current_locale
-    if params[:locale]
-      (I18n.available_locales.include? params[:locale].to_sym) ? params[:locale] : "en"
+    if params[:locale] and (I18n.available_locales.include? params[:locale].to_sym)
+       params[:locale]
+    elsif cookies[:locale] and (I18n.available_locales.include? cookies[:locale].to_sym)
+      cookies[:locale] 
     else
-      "en"
+      "sl"
     end
   end
 
   def admin?
-    true
+    session[:password] == "rpeb05krgostilne"
   end
   
   def body_attrs

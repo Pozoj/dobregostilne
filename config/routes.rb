@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.filter 'locale'
+  
   map.resources :orders, :payments, :types, :cuisines, :localities, :posts
   
   # Spots in an area

@@ -2,7 +2,7 @@
 module ApplicationHelper  
   def javascripts(*args)
     content_for(:head) do
-     javascript_include_tag(*args)
+      javascript_include_tag(*args)
     end
   end
 

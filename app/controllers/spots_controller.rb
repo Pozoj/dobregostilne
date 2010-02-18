@@ -3,16 +3,26 @@ class SpotsController < ResourceController::Base
     if params[:zoom] and params[:center_x] and params[:center_y]
       @spots = Spot.on_map [params[:center_y].to_f, params[:center_x].to_f], [700, 350], params[:zoom].to_i
     end
-    render :layout => false if request.xhr?
+    
+    if request.xhr?
+      render :layout => false 
+    end
   end
   
   def search
     @spots = Spot.geocoded.search params[:terms]
-    render :layout => false
+    
+    if request.xhr?
+      respond_to do |wants|
+        wants.js { render :layout => false }
+        wants.json { render :layout => false }
+        wants.html { render :template => "spots/spot_search.html.haml", :layout => false}
+      end
+    end
   end
   
   show.before do
-    @spot_info = object.spot_infos.find_by_language(current_locale)
+    @spot_info = @spot.spot_infos.find_by_language(current_locale)
     @nearby = @spot.in_radius(10)
   end
   

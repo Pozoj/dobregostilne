@@ -213,31 +213,24 @@ form.nice {
       margin: 0 10px 10px 0;
       font-size: 16px; }
 
-.spots#spots-index form {
-  text-align: center;
-  margin: 20px 0; }
-  .spots#spots-index form label {
-    font-size: 20px;
-    color: #666; }
-  .spots#spots-index form input {
-    height: 24px;
-    padding: 2px;
-    font-size: 20px; }
-.spots#spots-index ul.all li {
-  float: left;
-  width: 232px;
-  height: 50px;
-  background: #efefef;
-  margin: 0 10px 10px 0;
-  padding: 5px; }
-  .spots#spots-index ul.all li h3 {
-    font-size: 12px;
-    width: 170px;
+.spots#spots-index ul.all {
+  margin-top: 20px;
+  margin-left: -10px; }
+  .spots#spots-index ul.all li {
     float: left;
-    margin-left: 10px; }
-  .spots#spots-index ul.all li img {
-    display: block;
-    float: left; }
+    width: 236px;
+    height: 50px;
+    background: #efefef;
+    margin: 0 0 10px 10px;
+    padding: 5px; }
+    .spots#spots-index ul.all li h3 {
+      font-size: 12px;
+      width: 170px;
+      float: left;
+      margin-left: 10px; }
+    .spots#spots-index ul.all li img {
+      display: block;
+      float: left; }
 .spots#spots-index #no_results {
   margin-bottom: 25px; }
   .spots#spots-index #no_results p {
