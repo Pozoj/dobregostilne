@@ -26,12 +26,24 @@
     margin-bottom: 5px;
     font-size: 14px; }
 
+#flash {
+  border: 3px solid #000;
+  background: #efefef;
+  padding: 5px;
+  margin-bottom: 20px; }
+  #flash.error {
+    border-color: #ff0000;
+    background: #FDD6D3; }
+  #flash.notice {
+    border-color: #419C1E;
+    background: #DFFFD2; }
+
 #admin {
   position: fixed;
   z-index: 9999;
   top: 0px;
-  left: 0px;
-  width: 100%;
+  right: 0px;
+  width: 30%;
   height: 20px;
   background: #000;
   color: #fff;
@@ -231,14 +243,76 @@ form.nice {
     .spots#spots-index ul.all li img {
       display: block;
       float: left; }
-.spots#spots-index #no_results {
-  margin-bottom: 25px; }
-  .spots#spots-index #no_results p {
-    margin: 5px 0; }
-  .spots#spots-index #no_results ul li {
-    list-style: square inside; }
 .spots#spots-index #map {
   height: 450px; }
+.spots#spots-search #content {
+  min-height: 450px; }
+  .spots#spots-search #content #no_results h2 {
+    margin-bottom: 10px; }
+  .spots#spots-search #content #no_results h3 {
+    color: #444;
+    margin-bottom: 10px; }
+  .spots#spots-search #content form .field {
+    position: relative; }
+    .spots#spots-search #content form .field img {
+      display: block;
+      position: absolute;
+      top: 9px;
+      left: 250px;
+      z-index: 999; }
+    .spots#spots-search #content form .field input {
+      height: 20px;
+      width: 260px;
+      font-size: 18px;
+      padding: 5px; }
+  .spots#spots-search #content form #search_notice {
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 20px; }
+  .spots#spots-search #content #search_instruction ul {
+    margin-top: 5px; }
+    .spots#spots-search #content #search_instruction ul li {
+      font-weight: bold; }
+      .spots#spots-search #content #search_instruction ul li em {
+        font-weight: normal;
+        color: #333;
+        display: block;
+        padding-left: 20px; }
+  .spots#spots-search #content #no_results {
+    width: 40%;
+    margin-bottom: 25px; }
+    .spots#spots-search #content #no_results p {
+      margin: 5px 0; }
+    .spots#spots-search #content #no_results ul li {
+      list-style: square inside; }
+  .spots#spots-search #content ul#spots_list {
+    width: 40%;
+    float: left;
+    margin-top: 20px; }
+    .spots#spots-search #content ul#spots_list li {
+      clear: both;
+      height: 20px;
+      padding: 2.5px;
+      line-height: 20px; }
+      .spots#spots-search #content ul#spots_list li .letter {
+        width: 20px;
+        height: 20px;
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        line-height: 20px;
+        text-align: center;
+        background: url(../images/circleMarker.png) no-repeat;
+        float: left; }
+      .spots#spots-search #content ul#spots_list li .spot {
+        float: left;
+        margin-left: 10px;
+        width: 230px; }
+  .spots#spots-search #content #map {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 450px;
+    width: 55%; }
 .spots#spots-show #content h1, .spots#spots-show #content h2 {
   width: 400px;
   margin-bottom: 0; }
@@ -325,7 +399,8 @@ form.nice {
   clear: both;
   padding-top: 20px; }
 .spots#spots-show #map, .spots#spots-show #map div {
-  margin: 0; }
+  margin: 0;
+  clear: both; }
 .spots#spots-show #map {
   height: 400px; }
 .spots #map h4 {
@@ -343,7 +418,8 @@ body {
     background: #fff;
     width: 800px; }
     body #wrap>br, body #wrap br.clear {
-      clear: both; }
+      clear: both;
+      display: block; }
     body #wrap .checker {
       border: 2px solid #953735;
       background: #efefef;

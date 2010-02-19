@@ -16,14 +16,76 @@
     .spots#spots-index ul.all li img {
       display: block;
       float: left; }
-.spots#spots-index #no_results {
-  margin-bottom: 25px; }
-  .spots#spots-index #no_results p {
-    margin: 5px 0; }
-  .spots#spots-index #no_results ul li {
-    list-style: square inside; }
 .spots#spots-index #map {
   height: 450px; }
+.spots#spots-search #content {
+  min-height: 450px; }
+  .spots#spots-search #content #no_results h2 {
+    margin-bottom: 10px; }
+  .spots#spots-search #content #no_results h3 {
+    color: #444;
+    margin-bottom: 10px; }
+  .spots#spots-search #content form .field {
+    position: relative; }
+    .spots#spots-search #content form .field img {
+      display: block;
+      position: absolute;
+      top: 9px;
+      left: 250px;
+      z-index: 999; }
+    .spots#spots-search #content form .field input {
+      height: 20px;
+      width: 260px;
+      font-size: 18px;
+      padding: 5px; }
+  .spots#spots-search #content form #search_notice {
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 20px; }
+  .spots#spots-search #content #search_instruction ul {
+    margin-top: 5px; }
+    .spots#spots-search #content #search_instruction ul li {
+      font-weight: bold; }
+      .spots#spots-search #content #search_instruction ul li em {
+        font-weight: normal;
+        color: #333;
+        display: block;
+        padding-left: 20px; }
+  .spots#spots-search #content #no_results {
+    width: 40%;
+    margin-bottom: 25px; }
+    .spots#spots-search #content #no_results p {
+      margin: 5px 0; }
+    .spots#spots-search #content #no_results ul li {
+      list-style: square inside; }
+  .spots#spots-search #content ul#spots_list {
+    width: 40%;
+    float: left;
+    margin-top: 20px; }
+    .spots#spots-search #content ul#spots_list li {
+      clear: both;
+      height: 20px;
+      padding: 2.5px;
+      line-height: 20px; }
+      .spots#spots-search #content ul#spots_list li .letter {
+        width: 20px;
+        height: 20px;
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        line-height: 20px;
+        text-align: center;
+        background: url(../images/circleMarker.png) no-repeat;
+        float: left; }
+      .spots#spots-search #content ul#spots_list li .spot {
+        float: left;
+        margin-left: 10px;
+        width: 230px; }
+  .spots#spots-search #content #map {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 450px;
+    width: 55%; }
 .spots#spots-show #content h1, .spots#spots-show #content h2 {
   width: 400px;
   margin-bottom: 0; }
@@ -110,7 +172,8 @@
   clear: both;
   padding-top: 20px; }
 .spots#spots-show #map, .spots#spots-show #map div {
-  margin: 0; }
+  margin: 0;
+  clear: both; }
 .spots#spots-show #map {
   height: 400px; }
 .spots #map h4 {

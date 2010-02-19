@@ -11,6 +11,12 @@
     = javascript_include_tag :defaults
     = yield :head
   %body{body_attrs}
+    - unless admin?
+      #admin_gate= link_to "&rarr;", new_session_path
+    - else
+      #admin
+        Prijavljen kot administrator
+        = link_to "Odjava", session_path, :method => :delete
     #wrap
       #head
         #languages
@@ -20,15 +26,21 @@
         %h2= t("head.subtitle")
         #menu
           %ul
-            %li= link_to t("menu.home"), spots_path
+            %li= link_to t("menu.spots"), spots_path
             %li= link_to t("menu.search"), search_path
             %li= link_to t("menu.order"), order_path            
             %li= link_to t("menu.about"), about_path
             %li.last= link_to t("menu.authors"), authors_path
             %li.clear
       #content
+        - flash.keys.each do |type|
+          #flash{:class => type}= flash[type]
+        
         = yield
         %br.clear
     #foot
       &copy; 2009 Pozoj d.o.o. &mdash; 
       = t("foot.copyright")
+    
+    - if production?
+      = render "analytics"

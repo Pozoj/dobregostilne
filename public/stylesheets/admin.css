@@ -1,9 +1,21 @@
+#flash {
+  border: 3px solid #000;
+  background: #efefef;
+  padding: 5px;
+  margin-bottom: 20px; }
+  #flash.error {
+    border-color: #ff0000;
+    background: #FDD6D3; }
+  #flash.notice {
+    border-color: #419C1E;
+    background: #DFFFD2; }
+
 #admin {
   position: fixed;
   z-index: 9999;
   top: 0px;
-  left: 0px;
-  width: 100%;
+  right: 0px;
+  width: 30%;
   height: 20px;
   background: #000;
   color: #fff;

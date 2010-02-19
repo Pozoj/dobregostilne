@@ -1,1 +1,5 @@
-= render @spots
+- @spots.each do |spot|
+  - if spot
+    %li
+      .letter= spot.letter      
+      .spot= link_to spot, spot

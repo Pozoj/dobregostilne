@@ -1,4 +1,5 @@
 class SpotsController < ResourceController::Base
+  skip_before_filter :authenticate, :only => [:index, :show, :in_area, :search]
   def in_area
     if params[:zoom] and params[:center_x] and params[:center_y]
       @spots = Spot.on_map [params[:center_y].to_f, params[:center_x].to_f], [700, 350], params[:zoom].to_i
@@ -10,7 +11,14 @@ class SpotsController < ResourceController::Base
   end
   
   def search
-    @spots = Spot.geocoded.search params[:terms]
+    return unless params[:terms]
+    letter = "A"
+    @spots = Spot.geocoded.search(params[:terms]).map do |spot| 
+      break if letter > "Z"
+      spot.letter = letter
+      letter = letter.next
+      spot
+    end
     
     if request.xhr?
       respond_to do |wants|

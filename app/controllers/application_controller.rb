@@ -1,11 +1,15 @@
 class ApplicationController < ActionController::Base
   helper :all
-  helper_method :admin?, :current_locale, :body_attrs
+  helper_method :admin?, :current_locale, :body_attrs, :production?
   protect_from_forgery
   
-  before_filter :set_locale
+  before_filter :set_locale, :authenticate
 
   protected
+
+  def authenticate
+    redirect_to new_session_path unless admin?
+  end
 
   def set_locale
     locale = current_locale
@@ -28,6 +32,10 @@ class ApplicationController < ActionController::Base
 
   def admin?
     session[:password] == "rpeb05krgostilne"
+  end
+  
+  def production?
+    Rails.env.production?
   end
   
   def body_attrs

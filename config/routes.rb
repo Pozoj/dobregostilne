@@ -3,6 +3,9 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :orders, :payments, :types, :cuisines, :localities, :posts
   
+  # Sessions
+  map.resource :session, :only => [:create, :new, :destroy]
+  
   # Spots in an area
   map.in_area_spots '/spots_in_area', :controller => :spots, :action => :in_area
   

@@ -1,14 +1,41 @@
 - javascripts "livesearch.js"
 = title t(:search)
 
-- form_tag search_path do
-  = text_field_tag :terms, params[:terms]
+- form_tag search_path, :method => :get do
+  %p.field
+    = text_field_tag :terms, params[:terms]
+    = image_tag "loader.gif", :style => "display: none", :id => "spinner"
+    %p#search_notice 
+      - if !@spots or @spots.empty?
+        Začnite tipkati v iskalno polje ...
 
 #no_results{:style => "display: none;"}
   %h2 Ni rezultatov
+  %h3#terms_no_results
   %p Vaše iskanje ni obrodilo nobenih rezultatov. Poizkusite znova z drugimi ključnimi besedami.
-  %p Iščete lahko po:
-  %ul
-    %li Imenu gostilne, hotela, lokala
-    %li Naslovu
-    %li Kraju
+#search_instruction
+  - if !@spots or @spots.empty?
+    %p Iščete lahko po:
+    %ul
+      %li 
+        Imenu gostilne, hotela, lokala
+        %em npr. Gostišče Miran, Hotel
+      %li 
+        Naslovu
+        %em npr. Miklošičeva
+      %li 
+        Kraju
+        %em npr. Ljubljana, Maribor
+    
+%ul#spots_list
+  - if @spots
+    = render :file => "spots/spot_search.html.haml", :object => @spots
+
+- @map = GoogleMap::Map.new :zoom => 8, :center => Spot.new(:lat => 46.1512410, :lng => 14.9954630)
+- if @spots
+  - @spots.each do |spot|
+    - if spot
+      - icon = GoogleMap::LetterIcon.new(@map, spot.letter)
+      - @map.markers << GoogleMap::Marker.new(:map => @map, :icon => icon, :marker_hover_text => spot.name, :lat => spot.lat, :lng => spot.lng, :html => render(:partial => 'info', :locals => {:spot => spot}))
+= @map.to_html
+#map= @map.div

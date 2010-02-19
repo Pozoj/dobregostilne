@@ -14,9 +14,12 @@ class Spot < ActiveRecord::Base
   named_scope :search, lambda { |terms| 
     {
     :include => :post,
-    :conditions => ["(spots.name LIKE ?) OR (spots.long_name LIKE ?) OR (spots.street LIKE ?) OR (posts.name LIKE ?)", "%#{terms}%", "%#{terms}%", "%#{terms}%", "%#{terms}%"]
+    :conditions => ["(spots.name LIKE ?) OR (spots.long_name LIKE ?) OR (spots.street LIKE ?) OR (posts.name LIKE ?)", "%#{terms}%", "%#{terms}%", "%#{terms}%", "%#{terms}%"],
+    :limit => 10
     }
   }
+
+  attr_accessor :letter
   
   has_a_location
   
