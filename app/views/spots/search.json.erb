@@ -1,3 +1,5 @@
 [<%= @spots.map do |spot|
-  "{#{spot.to_json}, letter: '#{spot.letter}', html: \"#{escape_javascript escape_javascript(render(:partial => 'info.html.haml', :locals => {:spot => spot}))}\"}" if spot
+  if spot.geocoded?
+    "{#{spot.to_json}, letter: '#{spot.letter}', html: \"#{escape_javascript escape_javascript(render(:partial => 'info.html.haml', :locals => {:spot => spot}))}\"}" if spot
+  end
 end.join(",") -%>]

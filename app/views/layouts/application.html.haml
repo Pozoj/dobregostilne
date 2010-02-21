@@ -12,7 +12,8 @@
     = yield :head
   %body{body_attrs}
     - unless admin?
-      #admin_gate= link_to "&rarr;", new_session_path
+      #backdoor
+        = link_to "<span>&rarr;</span>", new_session_path
     - else
       #admin
         Prijavljen kot administrator

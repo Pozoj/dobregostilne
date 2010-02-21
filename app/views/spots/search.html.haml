@@ -34,7 +34,7 @@
 - @map = GoogleMap::Map.new :zoom => 8, :center => Spot.new(:lat => 46.1512410, :lng => 14.9954630)
 - if @spots
   - @spots.each do |spot|
-    - if spot
+    - if spot and spot.geocoded?
       - icon = GoogleMap::LetterIcon.new(@map, spot.letter)
       - @map.markers << GoogleMap::Marker.new(:map => @map, :icon => icon, :marker_hover_text => spot.name, :lat => spot.lat, :lng => spot.lng, :html => render(:partial => 'info', :locals => {:spot => spot}))
 = @map.to_html

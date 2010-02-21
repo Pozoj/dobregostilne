@@ -13,7 +13,7 @@ class SpotsController < ResourceController::Base
   def search
     return unless params[:terms]
     letter = "A"
-    @spots = Spot.geocoded.search(params[:terms]).map do |spot| 
+    @spots = Spot.search(params[:terms]).map do |spot| 
       break if letter > "Z"
       spot.letter = letter
       letter = letter.next

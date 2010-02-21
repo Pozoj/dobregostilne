@@ -90,6 +90,8 @@
   width: 20px;
   height: 20px;
   text-decoration: none; }
+  #backdoor a span {
+    display: none; }
   #backdoor a:hover {
     background: #953735; }
 

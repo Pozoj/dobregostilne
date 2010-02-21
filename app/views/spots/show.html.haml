@@ -142,12 +142,15 @@
       = @nearby.map {|s| link_to s, s }.join(", ")
 
 %br.clear
-- @map = GoogleMap::Map.new :zoom => 15, :center => GoogleMap::Marker.new(:map => GoogleMap::Map.new, :lat => @spot.lat, :lng => @spot.lng)
-- @map.markers << GoogleMap::Marker.new(:map => @map, :marker_hover_text => @spot.name, :lat => @spot.lat, :lng => @spot.lng, :html => render(:partial => 'info', :locals => {:spot => @spot}))
-- @nearby.each do |n|
-  - @map.markers << GoogleMap::Marker.new(:map => @map, :marker_hover_text => n.name, :lat => n.lat, :lng => n.lng, :html => render(:partial => 'info', :locals => {:spot => n}), :icon => GoogleMap::SmallIcon.new(@map, 'blue'))
-= @map.to_html
-#map= @map.div
+
+- if @spot.geocoded?
+  - @map = GoogleMap::Map.new :zoom => 15, :center => GoogleMap::Marker.new(:map => GoogleMap::Map.new, :lat => @spot.lat, :lng => @spot.lng)
+  - @map.markers << GoogleMap::Marker.new(:map => @map, :marker_hover_text => @spot.name, :lat => @spot.lat, :lng => @spot.lng, :html => render(:partial => 'info', :locals => {:spot => @spot}))
+  - @nearby.each do |n|
+    - if n.geocoded?
+      - @map.markers << GoogleMap::Marker.new(:map => @map, :marker_hover_text => n.name, :lat => n.lat, :lng => n.lng, :html => render(:partial => 'info', :locals => {:spot => n}), :icon => GoogleMap::SmallIcon.new(@map, 'blue'))
+  = @map.to_html
+  #map= @map.div
 
 - admin_section do
   - @spot.spot_infos.each do |si|

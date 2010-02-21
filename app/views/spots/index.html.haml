@@ -1,12 +1,11 @@
 - @map = GoogleMap::Map.new :custom_js => render("event_handlers.js")
-- Spot.geocoded.each do |spot|
-  - @map.markers << GoogleMap::Marker.new(:map => @map, :marker_hover_text => spot.name, :lat => spot.lat, :lng => spot.lng, :html => render(:partial => 'info', :locals => {:spot => spot}))
+- @spots.each do |spot|
+  - if spot.geocoded?
+    - @map.markers << GoogleMap::Marker.new(:map => @map, :marker_hover_text => spot.name, :lat => spot.lat, :lng => spot.lng, :html => render(:partial => 'info', :locals => {:spot => spot}))
 = @map.to_html
 #map= @map.div
 
 %ul#spots_list.all= render @spots
-
-/ #icon = GoogleMapLetterIcon.new(loc.letter)
 
 - admin_section do
   = link_to "Nova gostilna", new_object_path
