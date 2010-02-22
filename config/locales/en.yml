@@ -3,21 +3,22 @@ en:
   # Layout fields
   head:
     title: Good inns
-    subtitle: From a good Inn, to a nice place to spend the night in Slovenia
+    subtitle: "From a good Inn, to a nice place to spend the night in Slovenia"
     choose_language: "Choose your language:"
-    language_sl: Slovenian
-    language_en: English
-    language_de: German
-    language_it: Italian
+    language_sl: Slovenski jezik
+    language_en: English language
+    language_de: Deutsche sprach
+    language_it: Lingua Italiana
   menu:
     home: Home
     localities: Localities
     spots: Inns
+    search: Search
     posts: Places
     about: About
     authors: Authors
     contact: Contact
-    order: Order book
+    order: The book
     types: Types
     cuisines: Cuisines
     payments: Payments
@@ -91,6 +92,13 @@ en:
   posts:
     index:
       title: Places
+  
+  # Spots
+  spots:
+    search:
+      no_results: No results
+      no_results_explained: "Your query didn't return any results. Please try again using different keywords."
+      start_typing: "Start typing into the field ..."
   
   # Spot infos
   spot_infos:

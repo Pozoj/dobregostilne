@@ -139,3 +139,127 @@ de:
         even: "muss gerade sein"
         record_invalid: "Gültigkeitsprüfung ist fehlgeschlagen: {{errors}}"
       models:
+
+
+
+  # Layout fields
+  head:
+    title: Guten Gasthaus
+    subtitle: "Vom guten Gasthaus bis zur Nobelunterkunft in Slowenien"
+    choose_language: "Sprache:"
+    language_sl: Slovenski jezik
+    language_en: English language
+    language_de: Deutsche sprach
+    language_it: Lingua Italiana
+  menu:
+    home: Home
+    localities: Gebiet
+    spots: Browsen
+    search: Suchen
+    posts: Places
+    about: About
+    authors: Autoren
+    contact: Kontakt
+    order: Die Buche
+    types: Types
+    cuisines: Cuisines
+    payments: Payments
+  foot:
+    copyright: All rights reserved
+
+  search: Search
+
+  # Spot data fields
+  spot_working_hours: Arbeitszeit
+  spot_closed: Geschlossen
+  spot_location_description: Standort
+  spot_speciality: Spezialiteten
+  spot_spoon_dishes: Löffelgerichte
+  spot_description: Description
+  spot_wellness_description: Entspannung
+  spot_equipment_description: Zimmerausstattung
+  spot_extra_description: Zusätzliches Angebot
+
+  spot_type: Typ
+  spot_category: Kategorie
+  spot_large_post: Large city
+  spot_post: Ort
+  spot_locality: Gebiet
+  spot_address: Adresse
+  spot_phone: Telefon
+  spot_fax: Fax
+  spot_mobile: Handy
+  spot_email: Email
+  spot_website: Website
+  spot_cuisine: Typ der Küche
+  spot_garden: Außengarten
+  spot_homebread: Man bäckt eigenes Brot
+  spot_room_type: Typ
+  spot_room_number: No.
+  spot_number_of_1_rooms: Einzelzimmer
+  spot_number_of_2_rooms: Doppelzimmer
+  spot_number_of_3_rooms: Dreibettzimmer
+  spot_number_of_4_rooms: Vierbettzimmer
+  spot_number_of_appartments: Appartman
+  spot_number_of_disabled_rooms: Für die Behindered
+  spot_number_of_executive_rooms: Executivezimmer
+  payment_methods: Zahlung
+  work_time: Arbeitszeit
+  closed: Geschlossen
+  culinary_data: Küche
+  speciality: Spezialiteten
+  spoon_dishes: Löffelgerichte
+  wellness: Entspannung
+  equipment: Zimmerausstattung
+  location: Standort
+  nearby_spots: Nearby spots
+
+  # Admin common
+  edit: Edit
+  save: Save
+  destroy: Destroy
+
+
+  #
+  #
+  # Controller specific
+
+
+  # Localities  
+  localities:
+    index:
+      title: Gebiet
+
+  # Posts
+  posts:
+    index:
+      title: Places
+
+  # Spots
+  spots:
+    search:
+      title: Suchen
+      no_results: No results
+      no_results_explained: "Your query didn't return any results. Please try again using different keywords."
+      start_typing: "Start typing into the field ..."
+
+  # Spot infos
+  spot_infos:
+    edit:
+      title: Edit spot information
+
+  # Images
+  images:
+    new:
+      title: New image for spot
+
+  # Static pages
+  pages:
+    order:
+      title: Order the book
+    about:
+      title: About this site
+    authors:
+      title: Authors
+    contact:
+      title: Contact

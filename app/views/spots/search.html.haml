@@ -1,5 +1,5 @@
 - javascripts "livesearch.js"
-= title t(:search)
+= title t(".title")
 
 - form_tag search_path, :method => :get do
   %p.field
@@ -7,25 +7,15 @@
     = image_tag "loader.gif", :style => "display: none", :id => "spinner"
     %p#search_notice 
       - if !@spots or @spots.empty?
-        Začnite tipkati v iskalno polje ...
+        = t(".start_typing")
 
 #no_results{:style => "display: none;"}
-  %h2 Ni rezultatov
+  %h2= t(".no_results")
   %h3#terms_no_results
-  %p Vaše iskanje ni obrodilo nobenih rezultatov. Poizkusite znova z drugimi ključnimi besedami.
+  %p= t(".no_results_explained")
 #search_instruction
   - if !@spots or @spots.empty?
-    %p Iščete lahko po:
-    %ul
-      %li 
-        Imenu gostilne, hotela, lokala
-        %em npr. Gostišče Miran, Hotel
-      %li 
-        Naslovu
-        %em npr. Miklošičeva
-      %li 
-        Kraju
-        %em npr. Ljubljana, Maribor
+    = render "search_instructions_#{current_locale}"
     
 %ul#spots_list
   - if @spots

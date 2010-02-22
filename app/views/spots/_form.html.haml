@@ -87,6 +87,14 @@
     = f.label "Št. executive sob"
     = f.text_field :number_of_executive_rooms
     
+  %p
+    = f.label "Latitude"
+    = f.text_field :lat
+  %p
+    = f.label "Longitude"
+    = f.text_field :lng
+
+    
   %h2 Plačilne opcije
   - Payment.all.each do |payment|
     %p

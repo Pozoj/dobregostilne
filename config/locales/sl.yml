@@ -3,12 +3,12 @@ sl:
   # Layout fields
   head:
     title: Dobre gostilne
-    subtitle: Od gostilne do nobel prenočišča
+    subtitle: "Tako sem lačen, da ne vem, kam bi šel od žeje spat"
     choose_language: "Izberite jezik:"
-    language_sl: Slovensko
-    language_en: Angleško
-    language_de: Nemško
-    language_it: Italijansko
+    language_sl: Slovenski jezik
+    language_en: English language
+    language_de: Deutsche sprach
+    language_it: Lingua Italiana
   menu:
     home: Domov
     search: Iskanje
@@ -92,6 +92,14 @@ sl:
   posts:
     index:
       title: Kraji
+  
+  # Spots
+  spots:
+    search:
+      no_results: Ni rezultatov
+      no_results_explained: Vaše iskanje ni obrodilo nobenih rezultatov. Poizkusite znova z drugimi ključnimi besedami.
+      start_typing: "Začnite tipkati v iskalno polje ..."
+
   
   # Spot infos
   spot_infos:

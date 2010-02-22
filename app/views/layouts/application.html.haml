@@ -28,10 +28,14 @@
         #menu
           %ul
             %li= link_to t("menu.spots"), spots_path
-            %li= link_to t("menu.search"), search_path
-            %li= link_to t("menu.order"), order_path            
-            %li= link_to t("menu.about"), about_path
-            %li.last= link_to t("menu.authors"), authors_path
+            - if [:si, :en].include?(current_locale)
+              %li= link_to t("menu.search"), search_path
+              %li= link_to t("menu.order"), order_path            
+              %li= link_to t("menu.about"), about_path
+              %li.last= link_to t("menu.authors"), authors_path
+            - else
+              %li.last= link_to t("menu.search"), search_path
+              
             %li.clear
       #content
         - flash.keys.each do |type|

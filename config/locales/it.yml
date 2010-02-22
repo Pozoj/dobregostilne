@@ -136,3 +136,123 @@ it:
         less_than_or_equal_to: "deve essere meno o uguale a {{count}}"
         odd: "deve essere dispari"
         even: "deve essere pari"
+
+  # Layout fields
+  head:
+    title: Semplice trattoria
+    subtitle: "Da semplice trattoria ad elegante pensione in Slovenia"
+    choose_language: "Lingua:"
+    language_sl: Slovenski jezik
+    language_en: English language
+    language_de: Deutsche sprach
+    language_it: Lingua Italiana
+  menu:
+    home: Home
+    localities: Localita
+    spots: Navigazione
+    search: Ricerca
+    posts: Places
+    about: About
+    authors: Authors
+    contact: Contact
+    order: The book
+    types: Types
+    cuisines: Cuisines
+    payments: Pagamento
+  foot:
+    copyright: All rights reserved
+
+  # Spot data fields
+  spot_working_hours: Orario di apertura
+  spot_closed: Chiuso
+  spot_location_description: Localita
+  spot_speciality: Specialita
+  spot_spoon_dishes: Al cucchiaio
+  spot_description: Description
+  spot_wellness_description: Svago
+  spot_equipment_description: Arredo delle camere
+  spot_extra_description: Other information
+
+  spot_type: Tipo
+  spot_category: Categoria
+  spot_large_post: Luogo piu grande
+  spot_post: Luogo
+  spot_locality: Localita
+  spot_address: Indirizzo
+  spot_phone: Telefono
+  spot_fax: Fax
+  spot_mobile: Mobile
+  spot_email: Email
+  spot_website: Website
+  spot_cuisine: Tipo di cucina
+  spot_garden: Dispongono di giardino
+  spot_homebread: Offrono pane fatto in casa
+  spot_room_type: Tipo
+  spot_room_number: No.
+  spot_number_of_1_rooms: camere singole
+  spot_number_of_2_rooms: camere doppie
+  spot_number_of_3_rooms: camere a tre letti
+  spot_number_of_4_rooms: camere a quatro letti
+  spot_number_of_appartments: appartamenti
+  spot_number_of_disabled_rooms: camere per disabili
+  spot_number_of_executive_rooms: camere executive
+  payment_methods: Pagamento
+  work_time: Orario di apertura
+  closed: Chiuso
+  culinary_data: Cucina
+  speciality: Specialita
+  spoon_dishes: Al cucchiaio
+  wellness: Svago
+  equipment: Arredo delle camere
+  location: Localita
+  nearby_spots: Nearby spots
+
+  # Admin common
+  edit: Edit
+  save: Save
+  destroy: Destroy
+
+
+  #
+  #
+  # Controller specific
+
+
+  # Localities  
+  localities:
+    index:
+      title: Localities
+
+  # Posts
+  posts:
+    index:
+      title: Luogo
+
+  # Spots
+  spots:
+    search:
+      title: Ricerca
+      no_results: No results
+      no_results_explained: "Your query didn't return any results. Please try again using different keywords."
+      start_typing: "Start typing into the field ..."
+
+  # Spot infos
+  spot_infos:
+    edit:
+      title: Edit spot information
+
+  # Images
+  images:
+    new:
+      title: New image for spot
+
+  # Static pages
+  pages:
+    order:
+      title: Order the book
+    about:
+      title: About this site
+    authors:
+      title: Authors
+    contact:
+      title: Contact

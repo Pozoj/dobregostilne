@@ -19,6 +19,8 @@ class Spot < ActiveRecord::Base
     }
   }
 
+  validates_presence_of :street, :post_id, :name
+  
   attr_accessor :letter
   
   has_a_location
