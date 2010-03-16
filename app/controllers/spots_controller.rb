@@ -30,8 +30,12 @@ class SpotsController < ResourceController::Base
   end
   
   show.before do
-    @spot_info = @spot.spot_infos.find_by_language(current_locale)
-    @nearby = @spot.in_radius(10)
+    unless @spot
+      render :template => 'public/404', :layout => false, :status => 404
+    else
+      @spot_info = @spot.spot_infos.find_by_language(current_locale)
+      @nearby = @spot.in_radius(10)
+    end
   end
   
   create.before do
