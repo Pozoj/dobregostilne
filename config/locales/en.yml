@@ -96,6 +96,7 @@ en:
   # Spots
   spots:
     search:
+      title: "Search"
       no_results: No results
       no_results_explained: "Your query didn't return any results. Please try again using different keywords."
       start_typing: "Start typing into the field ..."

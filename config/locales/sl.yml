@@ -96,6 +96,7 @@ sl:
   # Spots
   spots:
     search:
+      title: "Iskanje"
       no_results: Ni rezultatov
       no_results_explained: Vaše iskanje ni obrodilo nobenih rezultatov. Poizkusite znova z drugimi ključnimi besedami.
       start_typing: "Začnite tipkati v iskalno polje ..."
