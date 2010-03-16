@@ -29,12 +29,13 @@ class SpotsController < ResourceController::Base
     end
   end
   
-  show.before do
+  def show
     unless @spot
-      render :template => 'public/404', :layout => false, :status => 404
+      render :file => 'public/404.html', :status => 404
     else
       @spot_info = @spot.spot_infos.find_by_language(current_locale)
       @nearby = @spot.in_radius(10)
+      render :template => 'show'
     end
   end
   
