@@ -12,5 +12,11 @@ Rails::Initializer.run do |config|
   config.i18n.default_locale = :sl
 end
 
+# Paperclip hax
+if Rails.env.development?
+  Paperclip.options[:image_magick_path] = '/usr/local/bin/' 
+end
+
+
 # Initialize route filtering.
 require "#{Rails.root}/lib/routing.rb"

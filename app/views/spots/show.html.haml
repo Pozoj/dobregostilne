@@ -92,6 +92,8 @@
       = link_to "Dodaj fotografijo", new_spot_image_path(@spot)
     - unless @spot.images.empty?
       .first= render @spot.images.first
+    - unless @spot.images_other.empty?
+      .other= render :partial => 'images/small', :collection => @spot.images_other
 
   - unless @spot.payments.empty?
     .payments
