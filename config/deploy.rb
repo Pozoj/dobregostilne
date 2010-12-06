@@ -1,7 +1,7 @@
 set :application, "dobre-gostilne.si"
 set :domain, "racker-deploy"
 set :deploy_to, "/webroot/dobregostilne"
-set :repository, 'git@home:gostilne.git'
+set :repository, 'git@staging:gostilne.git'
 set :scm, 'git'
 
 namespace :vlad do

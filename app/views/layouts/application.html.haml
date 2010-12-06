@@ -22,7 +22,8 @@
       #head
         #languages
           .text= t("head.choose_language")
-          - I18n.available_locales.each { |l| puts link_to_language l }
+          - I18n.available_locales.each do |l|
+            = link_to_language l
         %h1= link_to_span t("head.title"), root_path
         %h2= t("head.subtitle")
         #menu
@@ -44,7 +45,7 @@
         = yield
         %br.clear
     #foot
-      &copy; 2009 Pozoj d.o.o. &mdash; 
+      &copy; 2010 Pozoj d.o.o. &mdash; 
       = t("foot.copyright")
     
     - if production?
