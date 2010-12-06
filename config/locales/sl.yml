@@ -64,6 +64,7 @@ sl:
   payment_methods: Plačilne opcije
   work_time: Delovni čas
   closed: Zaprto
+  extra: "Dodatne informacije"
   culinary_data: Kulinarika
   speciality: Specialitete
   spoon_dishes: Jedi na žlico
