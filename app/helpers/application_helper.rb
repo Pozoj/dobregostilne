@@ -49,9 +49,7 @@ module ApplicationHelper
   end
   
   def link_to_self(url, email=false)
-    url
-    url_with_mail = "mailto:#{url}" if email
-    link_to url, url_with_mail
+    link_to url, email ? "mailto:#{url}" : url
   end
   
   def link_to_language(l)
