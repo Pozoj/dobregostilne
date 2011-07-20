@@ -10,7 +10,7 @@ class Spot < ActiveRecord::Base
   accepts_nested_attributes_for :payments
   before_save :geocode, :normalize_uri, :make_websafe
   default_scope :order => "spots.name"
-  named_scope :visible, :conditions => ["visible_until > ?", Date.today]
+  named_scope :visible, :conditions => ["visible_until IS NULL OR visible_until > ?", Date.today]
   named_scope :geocoded, :conditions => "spots.lng IS NOT NULL AND spots.lat IS NOT NULL"
   named_scope :search, lambda { |terms| 
     {
