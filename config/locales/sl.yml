@@ -1,5 +1,8 @@
 sl:
   
+  language: "Jezik"
+  back: "Nazaj"
+  
   # Layout fields
   head:
     title: Dobre gostilne
@@ -26,17 +29,27 @@ sl:
     copyright: Vse pravice pridržane
     
   search: Iskanje
+
     
   # Spot data fields
   spot_working_hours: Delovni čas
+  working_hours: Delovni čas
   spot_closed: Zaprto
+  closed: Zaprto
   spot_location_description: Podrobna lokacija
+  location_description: Podrobna lokacija
   spot_speciality: Specialitete
+  speciality: Specialitete
   spot_spoon_dishes: Jedi na žlico
+  spoon_dishes: Jedi na žlico
   spot_description: Opis
+  description: Opis
   spot_wellness_description: Wellness
+  wellness_description: Wellness
   spot_equipment_description: Opremljenost
+  equipment_description: Opremljenost
   spot_extra_description: Ostale informacije
+  extra_description: Ostale informacije
   
   spot_type: Tip
   spot_category: Kategorija
@@ -63,6 +76,7 @@ sl:
   spot_number_of_executive_rooms: Executive sobe
   payment_methods: Plačilne opcije
   work_time: Delovni čas
+  working_hours: Delovni čas
   closed: Zaprto
   extra: "Dodatne informacije"
   culinary_data: Kulinarika
@@ -71,6 +85,7 @@ sl:
   wellness: Wellness
   equipment: Opremljenost
   location: Lokacija
+  location_description: Opis lokacije
   nearby_spots: Gostilne blizu
   
   # Admin common
@@ -107,6 +122,9 @@ sl:
   spot_infos:
     edit:
       title: Uredi gostilno
+    index:
+      title: "Podatki v različnih jezikih"
+    
   
   # Images
   images:

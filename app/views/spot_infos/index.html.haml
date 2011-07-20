@@ -1,4 +1,4 @@
-= title ".title"
+= title t(".title")
 
 %table.nice
   %thead
@@ -27,10 +27,15 @@
         %td= h spot_info.extra_description
         %td= h spot_info.language
         
-        %td= link_to 'Show', object_url(spot_info)
-        %td= link_to 'Edit', edit_object_url(spot_info)
-        %td= link_to 'Destroy', object_url(spot_info), :confirm => 'Are you sure?', :method => :delete
+        %td
+          .admin
+            = link_to 'Show', object_url(spot_info)
+            = link_to 'Edit', edit_object_url(spot_info)
+            = link_to 'Destroy', object_url(spot_info), :confirm => 'Are you sure?', :method => :delete
 
   %br/
 
-  =link_to 'New spot_info', new_object_url
+.admin= link_to 'Dodaj nov prevod', new_object_url
+
+.back
+  = link_to "Nazaj", spot_path(@spot.name_websafe)
