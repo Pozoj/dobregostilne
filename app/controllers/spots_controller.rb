@@ -52,7 +52,11 @@ class SpotsController < ResourceController::Base
   protected
   
   def object
-    @spot ||= Spot.find_by_name_websafe params[:id]
+    if action_name == 'show'
+      @spot ||= Spot.find_by_name_websafe(params[:id])
+    else
+      super
+    end
   end
   
 end
