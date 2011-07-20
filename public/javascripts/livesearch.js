@@ -56,10 +56,12 @@ function process_markers(data) {
 function search_and_update() {
   input = $('terms')
   new Ajax.Updater('spots_list', '/search.html', {
+    method: 'get',
     parameters: {terms: input.value}
   })
   
   new Ajax.Request('/search.json', {
+    method: 'get',
     parameters: {terms: input.value},
     onSuccess: function(transport) {
       google_map.clearOverlays()

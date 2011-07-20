@@ -3,4 +3,4 @@
     = image_tag spot.image.image.url(:mini)
   - else
     = image_tag 'spot_missing.gif'
-  %h3= link_to spot, spot
+  %h3= link_to spot, spot_path(spot.name_websafe)

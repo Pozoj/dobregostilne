@@ -2,7 +2,11 @@ class SpotsController < ResourceController::Base
   skip_before_filter :authenticate, :only => [:index, :show, :in_area, :search]
   def in_area
     if params[:zoom] and params[:center_x] and params[:center_y]
-      @spots = Spot.on_map [params[:center_y].to_f, params[:center_x].to_f], [700, 350], params[:zoom].to_i
+      @spots = if admin?
+        Spot.on_map [params[:center_y].to_f, params[:center_x].to_f], [700, 350], params[:zoom].to_i
+      else
+        Spot.visible.on_map [params[:center_y].to_f, params[:center_x].to_f], [700, 350], params[:zoom].to_i
+      end
     end
     
     if request.xhr?
@@ -13,7 +17,8 @@ class SpotsController < ResourceController::Base
   def search
     return unless params[:terms]
     letter = "A"
-    @spots = Spot.search(params[:terms]).map do |spot| 
+    @spots = admin?? Spot.search(params[:terms]) : Spot.visible.search(params[:terms])
+    @spots = @spots.map do |spot| 
       break if letter > "Z"
       spot.letter = letter
       letter = letter.next
@@ -30,11 +35,13 @@ class SpotsController < ResourceController::Base
   end
   
   def show
-    unless object
-      render :file => 'public/404.html', :status => 404
-    else
-      @spot_info = object.spot_infos.find_by_language(current_locale)
-      @nearby = object.in_radius(10)
+    @spot = Spot.find_by_name_websafe(params[:id])
+    @spot = Spot.find(params[:id]) unless @spot
+    if @spot
+      @spot_info = @spot.spot_infos.find_by_language(current_locale)
+      @nearby = @spot.in_radius(10)
+    elsif 
+      render :file => 'public/404.html', :status => 404      
     end
   end
   
@@ -53,10 +60,14 @@ class SpotsController < ResourceController::Base
   
   def object
     if action_name == 'show'
-      @spot ||= Spot.find_by_name_websafe(params[:id])
+      @object = end_of_association_chain.find_by_name_websafe(params[:id])
     else
       super
     end
+  end
+  
+  def collection
+    @collection ||= admin?? end_of_association_chain.all : end_of_association_chain.visible
   end
   
 end

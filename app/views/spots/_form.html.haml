@@ -94,6 +94,9 @@
     = f.label "Longitude"
     = f.text_field :lng
 
+  %p
+    = f.label "Vpis viden do"
+    = f.date_select :visible_until
     
   %h2 Plačilne opcije
   - Payment.all.each do |payment|

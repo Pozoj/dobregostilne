@@ -2,4 +2,4 @@
   - if spot
     %li
       .letter= spot.letter      
-      .spot= link_to spot, spot
+      .spot= link_to spot, spot_path(spot.name_websafe)

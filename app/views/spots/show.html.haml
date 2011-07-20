@@ -4,6 +4,10 @@
     = @spot.type
     - if @spot.category? and (@spot.category > 0)
       = format_category @spot.category, @spot.type_id
+- if admin? and @spot.visible_until
+  %h3
+    Ta gostilna ima nastavljeno vidnost do:
+    = l @spot.visible_until
   
 .contact
   %p.name
@@ -32,57 +36,58 @@
     %p.website
       = link_to_self @spot.website
 
-.description= @spot_info.description
+- if @spot_info
+  .description= @spot_info.description
 
-- if @spot_info.location_description?
-  .location
-    %h3= t(:location)
-    %p= @spot_info.location_description
+  - if @spot_info.location_description?
+    .location
+      %h3= t(:location)
+      %p= @spot_info.location_description
 
-- if @spot_info.working_hours?
-  .hour_data
-    %h3= t("work_time")
-    - if @spot_info.working_hours?
-      %p.working
-        = @spot_info.working_hours
-    - if @spot_info.closed?
-      %p.working
-        %strong= t(:closed)
-        = @spot_info.closed
+  - if @spot_info.working_hours?
+    .hour_data
+      %h3= t("work_time")
+      - if @spot_info.working_hours?
+        %p.working
+          = @spot_info.working_hours
+      - if @spot_info.closed?
+        %p.working
+          %strong= t(:closed)
+          = @spot_info.closed
     
 
-.culinary
-  %h3= t("culinary_data")
-  - if @spot.cuisine
-    %p
-      %strong= t(:spot_cuisine)
-      =h @spot.cuisine
-  - if @spot_info.speciality?
-    %p
-      %strong= t(:speciality)
-      = @spot_info.speciality
-  - if @spot_info.spoon_dishes?
-    %p
-      %strong= t(:spoon_dishes)
-      = @spot_info.spoon_dishes
+  .culinary
+    %h3= t("culinary_data")
+    - if @spot.cuisine
+      %p
+        %strong= t(:spot_cuisine)
+        =h @spot.cuisine
+    - if @spot_info.speciality?
+      %p
+        %strong= t(:speciality)
+        = @spot_info.speciality
+    - if @spot_info.spoon_dishes?
+      %p
+        %strong= t(:spoon_dishes)
+        = @spot_info.spoon_dishes
 
-  - if @spot.has_garden?
-    %p.garden= t(:spot_garden)
-  - if @spot.has_homebread?
-    %p.homebread= t(:spot_homebread)
+    - if @spot.has_garden?
+      %p.garden= t(:spot_garden)
+    - if @spot.has_homebread?
+      %p.homebread= t(:spot_homebread)
 
-- if @spot_info.wellness_description?
-  .wellness
-    %h3= t(:wellness)
-    %p= @spot_info.wellness_description
-- if @spot_info.equipment_description?
-  .equipment
-    %h3= t(:equipment)
-    %p= @spot_info.equipment_description
-- if @spot_info.extra_description?
-  .extra
-    %h3= t(:extra)
-    %p= @spot_info.extra_description
+  - if @spot_info.wellness_description?
+    .wellness
+      %h3= t(:wellness)
+      %p= @spot_info.wellness_description
+  - if @spot_info.equipment_description?
+    .equipment
+      %h3= t(:equipment)
+      %p= @spot_info.equipment_description
+  - if @spot_info.extra_description?
+    .extra
+      %h3= t(:extra)
+      %p= @spot_info.extra_description
 
 
 
