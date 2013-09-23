@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
   end
 
   def admin?
-    session[:password] == "rpeb05krgostilne"
+    session[:password] == ENV['SESSION_PASSWORD']
   end
   
   def production?
