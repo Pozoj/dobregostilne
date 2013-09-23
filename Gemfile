@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
+ruby '1.9.2'
 
 gem 'rails', '2.3.12'
 gem "paperclip", "2.4.5"
@@ -11,7 +11,7 @@ gem 'rdoc'
 gem 'haml', '2.2.24'
 
 group :development do
-  gem 'mysql'
+  gem 'mysql2', '0.2.6'
 end
 
 group :production do
