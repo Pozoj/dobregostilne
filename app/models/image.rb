@@ -4,7 +4,7 @@ class Image < ActiveRecord::Base
                     :url  => "/assets/spots/:id/:style/:basename.:extension",
                     :whiny => false,
                     :storage => :s3,
-                    :bucket => AWS_S3['bucket'],
+                    :bucket => ENV['AWS_BUCKET'],
                     :s3_credentials => {
                       :bucket => ENV['AWS_BUCKET'],
                       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
