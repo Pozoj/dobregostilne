@@ -1,3 +1,4 @@
+# Encoding: utf-8
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper  
   def javascripts(*args)
@@ -17,16 +18,6 @@ module ApplicationHelper
     ret += " title='#{title}'" unless title.blank?
     ret += "class='lightbox'>#{string}</a>"
   end
-
-  # WillPaginate localization hax
-  include WillPaginate::ViewHelpers 
-
-  def will_paginate_with_i18n(collection, options = {})
-    will_paginate_without_i18n(collection, options.merge(:previous_label => I18n.t(:previous), :next_label => I18n.t(:next))) 
-  end 
-
-  alias_method_chain :will_paginate, :i18n
-
 
   def destroy_confirmation(obj)
     if obj.respond_to? :title

@@ -1,6 +1,14 @@
 - if payment.image?
-  %li.icon
-    = image_tag payment.icon
+  %li.icon= image_tag payment.icon
 - else
   %li.noicon
-    = payment
+    - if payment.name == 'gotovina'
+      - if current_locale == 'de'
+        Bargeld
+      - elsif current_locale == 'en'
+        cash
+      - elsif current_locale == 'it'
+        contante
+      - else
+        = payment
+      

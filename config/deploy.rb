@@ -13,7 +13,10 @@ namespace :vlad do
     [
       ["#{shared_path}/database.yml", "#{current_release}/config"],
       ["#{shared_path}/assets", "#{current_release}/public/assets"],
-      ["#{shared_path}/gmaps.rb", "#{current_release}/config/initializers/gmaps.rb"]
+      ["#{shared_path}/gmaps.rb", "#{current_release}/config/initializers/gmaps.rb"],
+      ["#{shared_path}/rvmrc", "#{latest_release}/.rvmrc"],
+      ["#{shared_path}/setup_load_paths.rb", "#{latest_release}/config/setup_load_paths.rb"]
+      end
     ].each do |link|
       cmd += "ln -s #{link[0]} #{link[1]}; "
     end

@@ -1,13 +1,7 @@
-RAILS_GEM_VERSION = '2.3.11' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.12' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
-  config.gem "paperclip"
-  config.gem "geokit"
-  config.gem "RedCloth"
-  config.gem "will_paginate"
-  config.gem 'resource_controller'
-  config.gem 'hoptoad_notifier'
   config.time_zone = 'Ljubljana'
   config.i18n.default_locale = :sl
 end

@@ -1,3 +1,4 @@
+# Encoding: utf-8
 Locality.create([
   { :name => "Ljubljana", :post_id => 1000 },
   { :name => "Maribor", :post_id => 2000 },
