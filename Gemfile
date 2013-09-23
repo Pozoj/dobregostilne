@@ -9,7 +9,7 @@ gem "will_paginate", "2.3.15"
 gem 'resource_controller', '0.6.6'
 gem 'rdoc'
 gem 'haml', '2.2.24'
-gem 'aws-sdk'
+gem 'aws-s3'
 gem 'unicorn'
 
 
