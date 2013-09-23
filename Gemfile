@@ -9,6 +9,9 @@ gem "will_paginate", "2.3.15"
 gem 'resource_controller', '0.6.6'
 gem 'rdoc'
 gem 'haml', '2.2.24'
+gem 'aws-sdk'
+gem 'unicorn'
+
 
 group :development do
   gem 'mysql2', '0.2.6'
@@ -16,5 +19,4 @@ end
 
 group :production do
   gem 'pg'
-  gem 'unicorn'
 end

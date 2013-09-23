@@ -12,6 +12,10 @@ GEM
     activeresource (2.3.12)
       activesupport (= 2.3.12)
     activesupport (2.3.12)
+    aws-sdk (1.19.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4, < 1.6.0)
+      uuidtools (~> 2.1)
     cocaine (0.4.2)
     geokit (1.6.0)
     haml (2.2.24)
@@ -19,6 +23,7 @@ GEM
     kgio (2.8.1)
     mime-types (1.25)
     mysql2 (0.2.6)
+    nokogiri (1.5.10)
     paperclip (2.4.5)
       activerecord (>= 2.3.0)
       activesupport (>= 2.3.2)
@@ -42,6 +47,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    uuidtools (2.1.4)
     will_paginate (2.3.15)
 
 PLATFORMS
@@ -49,6 +55,7 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth (= 4.2.9)
+  aws-sdk
   geokit (= 1.6.0)
   haml (= 2.2.24)
   mysql2 (= 0.2.6)
