@@ -5,7 +5,7 @@
     list-style: none; }
   #content a {
     text-decoration: none;
-    color: #21354D; }
+    color: #0f6d2d; }
     #content a:hover {
       text-decoration: underline; }
   #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
@@ -118,12 +118,12 @@ form.nice {
     list-style: inside square; }
 
 #head {
-  background: #006493 url(../images/head/symbols.png) no-repeat 680px 180px;
+  background: #0f6d2d url(../images/head/symbols.png) no-repeat 680px 180px;
   position: relative; }
   #head #languages {
     height: 50px;
     padding-left: 20px;
-    background: #5685C2;
+    background: #15a02e;
     border-bottom: 2px solid #fff;
     line-height: 50px;
     color: #fff;
@@ -166,7 +166,7 @@ form.nice {
         display: none; }
   #head h2 {
     width: 35%;
-    color: #B2E5FE;
+    color: #fdfa6c;
     font-weight: bold;
     font-family: Georgia, serif;
     font-size: 16px;
