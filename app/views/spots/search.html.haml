@@ -4,16 +4,9 @@
 - form_tag search_path, :method => :get do
   %p.field
     = text_field_tag :terms, params[:terms]
-    = image_tag "loader.gif", :style => "display: none", :id => "spinner"
-    %p#search_notice 
-      - if !@spots or @spots.empty?
-        = t(".start_typing")
+    = submit_tag t(".title"), class: 'search'
 
-#no_results{:style => "display: none;"}
-  %h2= t(".no_results")
-  %h3#terms_no_results
-  %p= t(".no_results_explained")
-#search_instruction
+#search_instruction{style: 'margin-top: 20px'}
   - if !@spots or @spots.empty?
     = render "search_instructions_#{current_locale}"
     
@@ -21,11 +14,3 @@
   - if @spots
     = render :file => "spots/spot_search.html.haml", :object => @spots
 
-- @map = GoogleMap::Map.new :zoom => 8, :center => Spot.new(:lat => 46.1512410, :lng => 14.9954630)
-- if @spots
-  - @spots.each do |spot|
-    - if spot and spot.geocoded?
-      - icon = GoogleMap::LetterIcon.new(@map, spot.letter)
-      - @map.markers << GoogleMap::Marker.new(:map => @map, :icon => icon, :marker_hover_text => spot.name, :lat => spot.lat, :lng => spot.lng, :html => render(:partial => 'info', :locals => {:spot => spot}))
-= @map.to_html
-#map= @map.div

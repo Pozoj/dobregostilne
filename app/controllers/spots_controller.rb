@@ -40,7 +40,6 @@ class SpotsController < ResourceController::Base
     @spot = Spot.find(params[:id]) unless @spot
     if @spot
       @spot_info = @spot.spot_infos.find_by_language(current_locale)
-      @nearby = Spot.all within: 10, origin: [@spot.lat, @spot.lng]
     elsif 
       render :file => 'public/404.html', :status => 404      
     end

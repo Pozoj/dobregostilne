@@ -143,21 +143,24 @@
               %td= t(:spot_number_of_executive_rooms)
               %td.rooms= @spot.number_of_executive_rooms
 
-  - unless @nearby.empty?
-    .nearby
-      %h3= t(:nearby_spots)
-      = @nearby.map {|s| link_to s, s }.join(", ")
-
 %br.clear
 
 - if @spot.geocoded?
-  - @map = GoogleMap::Map.new :zoom => 15, :center => GoogleMap::Marker.new(:map => GoogleMap::Map.new, :lat => @spot.lat, :lng => @spot.lng)
-  - @map.markers << GoogleMap::Marker.new(:map => @map, :marker_hover_text => @spot.name, :lat => @spot.lat, :lng => @spot.lng, :html => render(:partial => 'info', :locals => {:spot => @spot}))
-  - @nearby.each do |n|
-    - if n.geocoded?
-      - @map.markers << GoogleMap::Marker.new(:map => @map, :marker_hover_text => n.name, :lat => n.lat, :lng => n.lng, :html => render(:partial => 'info', :locals => {:spot => n}), :icon => GoogleMap::SmallIcon.new(@map, 'blue'))
-  = @map.to_html
-  #map= @map.div
+  #map
+
+  :erb
+    <script type="text/javascript">
+      var center = new google.maps.LatLng(<%= @spot.lat %>, <%= @spot.lng %>);
+      var gm_map_type = google.maps.MapTypeId.ROADMAP;
+      var map_options = {zoom: 14, center: center, mapTypeId: gm_map_type};
+      var map_el = document.getElementById('map');
+      var map = new google.maps.Map(map_el, map_options);
+      new google.maps.Marker({
+        map: map,
+        position: new google.maps.LatLng(<%= @spot.lat %>, <%= @spot.lng %>),
+        title: "<%= @spot.name %>"
+      });
+    </script>
 
 - admin_section do
   - @spot.spot_infos.each do |si|
