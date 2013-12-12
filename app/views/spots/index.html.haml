@@ -1,11 +1,46 @@
-- @map = GoogleMap::Map.new :custom_js => render("event_handlers.js")
-- @spots.each do |spot|
-  - if spot.geocoded?
-    - @map.markers << GoogleMap::Marker.new(:map => @map, :marker_hover_text => spot.name, :lat => spot.lat, :lng => spot.lng, :html => render(:partial => 'info', :locals => {:spot => spot}))
-= @map.to_html
-#map= @map.div
+#map
 
-%ul#spots_list.all= render @spots
+%ul#spots_list.all= render collection
 
 - admin_section do
   = link_to "Nova gostilna", new_object_path
+
+:javascript
+  var gm_map_type = google.maps.MapTypeId.ROADMAP;
+  var map_options = {zoom: 8, mapTypeId: gm_map_type};
+  var map_el = document.getElementById('map');
+  var map = new google.maps.Map(map_el, map_options);
+
+
+  var move_timeout;
+  var movement_updates = 0;
+
+  function bounds_to_params(bounds) {
+    var ne = bounds.getNorthEast();
+    var sw = bounds.getSouthWest();
+    return { ne_lat: ne.lat(), ne_lng: ne.lng(), sw_lat: sw.lat(), sw_lng: sw.lng() };
+  }
+
+  function movement_update() {
+    movement_updates += 1;
+    if ( movement_updates < 2 ) return;
+      
+    new Ajax.Updater('spots_list', '/spots_in_area', {
+      method: 'get',
+      parameters: bounds_to_params(map.getBounds())
+    });
+  }
+
+  function handle_movement() {
+    if (move_timeout)
+    {
+      clearTimeout(move_timeout)
+      move_timeout = null
+    }
+    
+    move_timeout = setTimeout(movement_update, 700)  
+  }
+
+  google.maps.event.addListener(map, 'bounds_changed', handle_movement);
+
+= render "markers"

@@ -1,0 +1,17 @@
+<script type="text/javascript">
+  var markers = [];
+  var bounds = new google.maps.LatLngBounds();
+
+  <% collection.each_with_index do |spot, idx| -%>
+    <% if spot.geocoded? -%>
+      markers[<%= idx %>] = new google.maps.Marker({
+        map: map,
+        position: new google.maps.LatLng(<%= spot.lat %>, <%= spot.lng %>),
+        title: "<%= spot.name %>"
+      });
+      bounds.extend(markers[<%= idx %>].position);
+    <% end -%>
+  <% end -%>
+
+  map.fitBounds(bounds);
+</script>

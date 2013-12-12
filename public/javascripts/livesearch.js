@@ -46,7 +46,7 @@ function process_markers(data) {
       ctr++;
     })
     var zoom = google_map.getBoundsZoomLevel(google_map_latlng_bounds);
-    if (zoom > 11) zoom = zoom - (zoom-11)    
+    if (zoom > 11) zoom = zoom - (zoom-11)
   }
 
   

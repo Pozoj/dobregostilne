@@ -9,6 +9,7 @@
         = t("head.title")
     = stylesheet_link_tag 'application'
     = javascript_include_tag :defaults
+    = google_maps_api
     = yield :head
   %body{body_attrs}
     - unless admin?

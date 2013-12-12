@@ -242,6 +242,11 @@ form.nice {
       width: 170px;
       float: left;
       margin-left: 10px; }
+    .spots#spots-index ul.all li h4 {
+      font-size: 11px;
+      font-weight: normal;
+      float: left;
+      margin-left: 10px; }
     .spots#spots-index ul.all li img {
       display: block;
       float: left; }

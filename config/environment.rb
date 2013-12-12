@@ -1,4 +1,4 @@
-RAILS_GEM_VERSION = '2.3.12' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.18' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
@@ -10,7 +10,6 @@ end
 if Rails.env.development?
   Paperclip.options[:image_magick_path] = '/usr/local/bin/' 
 end
-
 
 # Initialize route filtering.
 require "#{Rails.root}/lib/routing.rb"

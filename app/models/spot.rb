@@ -24,7 +24,11 @@ class Spot < ActiveRecord::Base
   
   attr_accessor :letter
   
-  has_a_location
+  acts_as_mappable :default_units => :kms, 
+                   :default_formula => :sphere, 
+                   :distance_field_name => :distance,
+                   :lat_column_name => :lat,
+                   :lng_column_name => :lng
   
   def address
     "#{street} #{street_number}#{street_number_suffix}" if (!street.blank? and !street_number.blank?)

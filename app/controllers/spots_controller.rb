@@ -1,12 +1,13 @@
 class SpotsController < ResourceController::Base
   skip_before_filter :authenticate, :only => [:index, :show, :in_area, :search]
   def in_area
-    if params[:zoom] and params[:center_x] and params[:center_y]
-      @spots = if admin?
-        Spot.on_map [params[:center_y].to_f, params[:center_x].to_f], [700, 350], params[:zoom].to_i
-      else
-        Spot.visible.on_map [params[:center_y].to_f, params[:center_x].to_f], [700, 350], params[:zoom].to_i
-      end
+    sw = [params[:sw_lat], params[:sw_lng]]
+    ne = [params[:ne_lat], params[:ne_lng]]
+
+    @spots = if admin?
+      Spot.all bounds: [sw, ne]
+    else
+      Spot.visible.all bounds: [sw, ne]
     end
     
     if request.xhr?
@@ -39,7 +40,7 @@ class SpotsController < ResourceController::Base
     @spot = Spot.find(params[:id]) unless @spot
     if @spot
       @spot_info = @spot.spot_infos.find_by_language(current_locale)
-      @nearby = @spot.in_radius(10)
+      @nearby = Spot.all within: 10, origin: [@spot.lat, @spot.lng]
     elsif 
       render :file => 'public/404.html', :status => 404      
     end
@@ -49,7 +50,7 @@ class SpotsController < ResourceController::Base
     @spot.locality = @locality if @locality
     I18n.available_locales.each do |l|
       @spot.spot_infos.build(:language => l.to_s)
-    end  
+    end
   end
   
   update.before do
