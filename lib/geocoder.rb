@@ -10,7 +10,7 @@ module Geocoder
     raise ArgumentError unless city
 
     address = normalize_address(street, city, zip)
-    remote_geocoding(address, :google) || remote_geocoding(address, :yahoo)
+    remote_geocoding(address, :google)
   end
   
 
@@ -24,8 +24,7 @@ module Geocoder
   end
   
   def remote_geocoding(address, provider)
-    klass = GeoKit::Geocoders.const_get "#{provider.to_s.capitalize}Geocoder"
-    result = klass.geocode(address)
+    result = Geokit::Geocoders::GoogleGeocoder3.geocode(address)
     return result if result.success
   end
 end
