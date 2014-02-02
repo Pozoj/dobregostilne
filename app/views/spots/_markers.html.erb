@@ -7,7 +7,7 @@
       markers[<%= idx %>] = new google.maps.Marker({
         map: map,
         position: new google.maps.LatLng(<%= spot.lat %>, <%= spot.lng %>),
-        title: "<%= JSON.generate(spot.name) %>"
+        title: "<%= spot.name.to_json if spot and spot.name %>"
       });
       bounds.extend(markers[<%= idx %>].position);
     <% end -%>
