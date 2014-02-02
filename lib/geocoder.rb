@@ -20,7 +20,7 @@ module Geocoder
     geo_street = street.gsub /ul\./, "ulica"
     geo_street = geo_street.gsub /c\./, "cesta"
     city = "#{zip} #{city}" if zip
-    [geo_street, city, 'Slovenia'].select { |word| !word.blank? }.join(', ')
+    [geo_street, city, 'Slovenia'].select { |word| !word.blank? }.map { |word| word.force_encoding('utf-8') }.join(', ')
   end
   
   def remote_geocoding(address, provider)
